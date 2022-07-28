@@ -1,0 +1,2314 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@200;300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: "poppins",sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+/* header */
+.header{
+    width: 100%;
+    z-index: 2;
+}
+.headerTitle{
+    background-color: #000000;
+    color: rgb(245, 245, 245);
+    height: 45px;
+    text-align: center;
+    padding: 20px;
+}
+.headerTitle p{
+    font-size: 1rem;
+    font-weight: 300;
+}
+.topNav{
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    height: 75px;
+}
+.topNav .navLogo{
+    width: 30%;
+}
+ .topNav .navLogo a{
+    font-size: 2rem;
+    color: #000000;
+    text-decoration: none;
+}
+#navLinks{
+    width: 40%;
+    margin: 0 15% 0 10%;
+}
+#navLinks button{
+   font-size: 1.2rem;
+   text-align: center;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+   width: 30%;
+}
+.navIcons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    padding: 10px;
+}
+.navIcons a{
+    font-size: 25px;
+    color: #000000;
+}
+.bi.bi-person{
+    font-size: 30px;
+}
+.bi.bi-list{
+    display: none;
+}
+
+/* Media Query for Header */
+@media(max-width: 1210px){
+    .topNav{
+        padding: 0 60px;
+    }
+    .topNav .navLogo{
+        width: 30%;
+    }
+    .topNav .navLogo a{
+        font-size: 1.8rem;
+    }
+    #navLinks{
+        width: 42%;
+        margin: 0 8% 0 8%;
+    }
+    .navIcons {
+        width: 10%;
+        padding: 10px;
+    }
+    .navIcons a{
+        margin: 20px;
+        font-size: 20px;
+    }
+    .bi.bi-person{
+        font-size: 25px;
+    }
+}
+
+@media(max-width: 980px){
+    .topNav{
+        padding: 0 20px;
+    }
+    .topNav .navLogo{
+        width: 28%;
+    }
+    .topnav .navLogo a{
+        font-size: 1.6rem;
+    }
+    #navLinks{
+        width: 45%;
+        margin: 0 12% 0 6%;
+    }
+    .navIcons a{
+        margin: 15px;
+        font-size: 15px;
+    }
+    .bi.bi-person{
+        font-size: 19px;
+    }
+}
+@media(max-width: 800px){
+    .topNav{
+        padding: 0 10px;
+    }
+   .topNav .navLogo a{
+        font-size: 1.5rem;
+    }
+    #navLinks{
+        margin: 0 10% 0 2%;
+    }
+    .navIcons {
+        padding: 10px;
+    }
+}
+@media(max-width: 730px){
+
+    #navLinks{
+       background-color: rgb(4, 3, 3);
+       position: absolute;
+       display: block;
+       top: -1000%;
+       z-index: 3;
+       width: 100%;
+       height: 600px;
+       margin: 0;
+       opacity: .95;
+       transition: 1s;
+    }
+    .isActiveNav{
+        top: 75% !important;
+    }
+    .topNav .navLogo{
+        position: relative;
+        left: 20%;
+        width: 50%;
+    }
+    #topNav{
+        padding: 0 10px;
+        position: relative;
+    }
+    .topNav .navLogo a{
+        font-size: 1.9rem;
+    }
+
+    #navLinks button{
+       margin: 10px;
+       color: rgb(238, 237, 237);
+       padding: 14px 16px;
+       text-decoration: none;
+       border: none;
+       display: block;
+       width: 100%;
+    }
+    #navLinks button:hover{
+        background-color: #0e0e0e;
+     }
+    .navIcons {
+        position: relative;
+        left: 30%;
+        width: 5%;
+        padding: 10px;
+    }
+    .bi.bi-list{
+        display: block;
+        position: absolute;
+        top: 2;
+        left: 2;
+        font-size: 30px;
+    }
+    .navIcons a{
+        margin: 15px;
+        font-size: 20px;
+    }
+    .bi.bi-person{
+        font-size: 25px;
+    }
+}
+@media(max-width: 570px){
+    .topNav .navLogo{
+        left: 15%;
+    }
+    .topNav .navLogo a{
+        font-size: 1.7rem;
+    }
+    .bi.bi-list{
+        font-size: 25px;
+    }
+    .navIcons a{
+        font-size: 18px;
+    }
+    .bi.bi-person{
+        font-size: 20px;
+    }
+}
+@media(max-width: 460px){
+    
+    .topNav .navLogo{
+        left: 10%;
+        width: 50%;
+    }
+    .topNav{
+        padding: 0 10px;
+    }
+    .topNav .navLogo a{
+        font-size: 1.2rem;
+    }
+    .navIcons {
+        left: 25%;
+        width: 5%;
+    }
+    .bi.bi-list{
+        display: block;
+        position: relative;
+        right: 4;
+        font-size: 25px;
+    }
+    .navIcons a{
+        margin: 10px;
+        font-size: 18px;
+    }
+}
+@media(max-width: 320px){
+    .topNav .navLogo{
+        position: relative;
+        left: 10%;
+        width: 50%;
+    }
+    .topNav{
+        padding: 0 10px;
+    }
+    .topNav .navLogo a{
+        font-size: 1rem;
+    }
+    .navIcons {
+        left: 25%;
+    }
+    .bi.bi-list{
+        right: 4;
+        font-size: 19px;
+    }
+    .navIcons a{
+        margin: 10px;
+        font-size: 15px;
+    }
+    .bi.bi-person{
+        font-size: 15px;
+    }
+}
+
+/* home.php css */
+
+#banner{
+    height: auto;
+}
+#banner img{
+  width: 100%;
+  height: 700px;
+  opacity: 0.8;
+}
+.merchBody{
+  margin: 40px 0;
+  padding: 0 2%;
+}
+.merchBody h1{
+    font-size: 1.8rem;
+    text-align: center;
+}
+.merchBox{
+    margin-top: 50px;
+}
+.merchBox form.merchForm{
+    width: 29%;
+    margin: 10px 20px;
+    display: inline-block;
+    height: auto;
+    padding: 1%;
+}
+.merchBox .merch{
+    width: 100%;
+    vertical-align: top;
+    position: relative;
+}
+
+.merchBox .merch img{
+    width: 100%;
+    height: 50%;
+}
+.merchBox .merch .merchContent{
+    margin-top: 5px;
+    text-align: center;
+}
+.merchContent p{
+    margin-top: 5px;
+}
+.merchBTN{
+    display: none;
+    height: 30px;
+    width: 25%;
+    position: absolute;
+    top: 48%;
+    margin-left: 35%;
+    margin-top: 20px;
+    background-color: rgb(27, 27, 27);
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: none;
+    z-index: 1;
+    border-radius: 12px;
+}
+.merchBTN:hover{
+  background-color: #fff;
+  color: rgb(230, 117, 117);
+  border: rgb(56, 42, 42) solid 1px;
+  cursor: pointer;
+}
+.merch:hover{
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.993);
+}
+.merch:hover .merchBTN{
+  display: block;
+  top: 48%;
+  transition: 0.3s ease-in;
+}
+
+/* media query for home */
+@media(max-width: 1000px){
+    .merchBody{
+      padding: 0 1%;
+    }
+    .merchBody h1{
+        font-size: 1.6rem;
+    }
+    .merchBox form.merchForm{
+        width: 25%;
+        display: inline-block;
+        margin: 10px 30px;
+        height: 180px;
+    }
+    .merchBTN{
+        height: 25px;
+        width: 30%;
+        top: 30%;
+        margin-left: 33%;
+        font-size: 13px;
+    }
+
+}
+@media(max-width: 755px){
+    .merchBox form.merchForm{
+        width: 40%;
+        margin: 10px 30px;
+    }
+}
+@media(max-width: 650px){
+    .merchBody{
+      padding: 0 5%;
+    }
+    .merchBody h1{
+        font-size: 1.6rem;
+    }
+    .merchBox{
+        width: 80%;
+        margin: 30px auto;
+    }
+    .merchBox form.merchForm{
+        width: 100%;
+        margin-bottom: 75px;
+        height: auto;
+    }
+    .merchBox .merch{
+        display: block;
+        width: 100%;
+    }
+    
+    .merchBox .merch .merchContent{
+        margin-top: 20px;
+    }
+    .merchContent p{
+        margin-top: 5px;
+        font-size: 20px;
+    }
+}
+/* Merch.php */
+.merchBody2{
+    width: 100%;
+}
+.merchInfo{
+   width: 80%;
+   margin: 0 auto;
+   padding: 1%;
+}
+.merchPicture,.merchWritings{
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 3% 4.5%;
+    padding: 1%;
+}
+
+.merchPicture img{
+    display: inline-block;
+    width: 100%;
+}
+.merchWritings{
+    padding-left: 3% !important;
+}
+.merchWritings h1{
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+.merchWritings .price{
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+.merchSizing p{ 
+font-size: 1.2rem;
+margin-bottom: 10px;
+}
+.merchSizing #shoeSize{
+     font-size: 1.5rem;
+     width: 50%;
+     margin-bottom: 30px;
+}
+.quantityBox{
+    margin-bottom: 20px;
+}
+.quantityBox label{
+    margin-right: 10px;
+}
+.quantityBox input[type='number']{
+    border: none;
+    font-size: 1.1rem;
+}
+.merchSizing .merchFunction{
+    width: 100%;
+}
+.merchFunction .merchPageBTN{
+    width: 50%;
+    height: 30px;
+    border-radius: 12px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+.merchFunction .merchPageBTN:hover{
+    background-color: rgb(164, 163, 163);
+    color: rgb(32, 32, 32);
+}
+
+@media(max-width: 1000px){
+    .merchPicture{
+        width: 50%;
+    }
+    .merchWritings{
+        width: 30% !important;
+    }
+    .merchSizing #shoeSize{
+         width: 75%;
+    }
+    .merchFunction .merchPageBTN{
+        width: 75%;
+    }
+}
+@media(max-width: 750px){
+    .merchInfo{
+        width: 98%;
+        margin: 0 auto;
+     }
+    .merchPicture{
+        width: 50%;
+    }
+}
+@media(max-width: 600px){
+    .merchInfo{
+        width: 95%;
+        margin: 0 auto;
+    }
+    .merchPicture{
+        width: 100%;
+    }
+    .merchWritings, .merchPicture{
+        display: block;
+    }
+    .merchWritings{
+        margin-top: 20px;
+        width: 100% !important;
+    }
+    .merchSizing #shoeSize{
+        width: 75%;
+   }
+}
+
+
+  /* CSS for cart */
+  .cartBody{
+    margin-top: 50px;
+    width: 100%;
+    height: auto;
+}
+.cartBody .cartContainerHeader{
+    width: 80%;
+    margin: 50px auto 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartContainerHeader .cartHeader h3{
+    font-size: 2.2rem;
+}
+.cartContainerHeader .continueShoppingContainer a{
+    font-size: 1.2rem;
+    color: #575757;
+}
+.cartBody .cartContainer{
+    display: inline-block;
+    width: 50%;
+    margin-top: 30px;
+}
+.cartBody .mainContainer{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.cartContainer .cartItems{
+    height: 250px;
+    border-bottom: 1px solid #d8d6d6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartBody .hiddenSummary{
+    display: none;
+}
+.itemRow .itemImageContainer{
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+}
+.itemRow .itemImageContainer img{
+    width: 100%;
+    height: 100%;
+}
+.cartItems .itemFields{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    margin-left: 9%;
+}
+.itemFields .itemFieldsTop{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.itemContent .itemName{
+   font-size: 1.3rem;
+   font-weight: 400;
+   color: rgb(34, 34, 34);
+   margin-bottom: 10px;
+   
+} 
+.itemContent .size{
+    font-size: 1.2rem;
+ }  
+ .itemContent .sizeText{
+    font-size: 1.1rem;
+    font-weight: 500;
+ } 
+ .itemFieldsTop .itemPrice p{
+     font-size: 1.3rem;
+     font-weight: 400;
+     color: rgb(34, 34, 34)
+ }
+ 
+ .itemFieldsBottom{
+    display: flex;
+    justify-content: space-between;
+ }
+ .itemQuantityContainer p{ 
+    font-size: 1.2rem;
+}
+.itemQuantityContainer label{
+    margin-right: 10px;
+}
+.itemQuantityContainer input[type='number']{
+    border: none;
+    font-size: 1.1rem;
+}
+.itemQuantityContainer input[type='number']::placeholder{
+    color: black;
+}
+.itemOptions button{
+    color: #575757;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.cartBody .orderSummary{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    margin-top: 50px;
+}
+.cartBody .orderSummaryHeading{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.cartBody .orderSummary .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+.cartBody .orderSummary .row .col{
+    font-size: 1.2rem;
+}
+.cartBody .orderSummary .row .total{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.cartBody .orderSummary hr{
+    color: #cfcccc;
+}
+.row .checkoutBTN{
+    width: 100%;
+    height: 35px;
+    background-color: #000000;
+    color: #dddddd;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+@media(max-width: 1300px){
+  .cartBody .mainContainer{
+      width: 95%;
+  }
+}
+@media(max-width: 1000px){
+    .cartBody{
+        margin-top: 0;
+    }
+    .cartBody .cartContainerHeader{
+        width: 95%;
+    }
+    .cartBody .cartContainer{
+        width: 55%;
+        margin-top: 10px;
+    }
+    .cartBody .orderSummary{
+        width: 35%;
+    }
+    .cartBody .mainContainer{
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .itemContent .itemName{
+        font-size: 1.1rem;
+     } 
+     .itemContent .size{
+         font-size: 1.1rem;
+      }  
+      .itemContent .sizeText{
+         font-size: 1rem;
+      } 
+      .itemFieldsTop .itemPrice p{
+          font-size: 1.1rem;
+      }
+
+     .itemQuantityContainer input[type='number']{
+         font-size: 1rem;
+     }
+     .itemOptions button{
+         font-size: 1rem;
+     }
+     .cartBody .orderSummary{
+         display: inline-block;
+         width: 30%;
+         vertical-align: top;
+     }
+     .cartBody .orderSummaryHeading{
+         font-size: 1.4rem;
+         font-weight: 700;
+         margin-bottom: 30px;
+     }
+     .cartBody .orderSummary .row .col{
+         font-size: 1.1rem;
+     }
+     .cartBody .orderSummary .row .total{
+         font-size: 1.2rem;
+     }
+     .row .checkoutBTN{
+         width: 100%;
+         height: 35px;
+         background-color: #000000;
+         color: #dddddd;
+         cursor: pointer;
+         text-transform: uppercase;
+     }
+    
+}
+@media(max-width: 850px){
+
+    .cartBody .cartContainer{
+        width: 60%;
+        margin-top: 10px;
+    }
+    .cartContainer .cartItems{
+        height: 170px;
+    }
+    .itemRow .itemImageContainer{
+        width: 35%;
+        height: 100%;
+    }
+    .cartItems .itemFields{
+        margin-left: 2%;
+    }
+    .itemContent .itemName{
+       font-size: 1.2rem;
+    } 
+    .itemContent .size{
+        font-size: 1.1rem;
+     }  
+     .itemContent .sizeText{
+        font-size: 1rem;
+     } 
+     .itemFieldsTop .itemPrice p{
+         font-size: 1.2rem;
+     }
+     .itemQuantityContainer p{ 
+        font-size: 1rem;
+    }
+    .itemQuantityContainer select{ 
+        font-size: 1rem;
+    }
+    .itemOptions a{
+        font-size: 1.1rem;
+    }
+    .cartBody .orderSummary{
+        display: inline-block;
+        width: 30%;
+        margin-top: 0;
+    }
+    .cartBody .orderSummaryHeading{
+        font-size: 1.4rem;
+    }
+
+    .cartBody .orderSummary .row .col{
+        font-size: 1.1rem;
+    }
+    .cartBody .orderSummary .row .total{
+        font-size: 1.2rem;
+    }
+    .cartBody .orderSummary hr{
+        color: #cfcccc;
+    }    
+}
+@media(max-width: 750px){
+
+    .cartBody .cartContainer{
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .cartBody .mainContainer{
+        width: 95%;
+        flex-direction: column;
+    }
+    .itemRow .itemImageContainer{
+        width: 30%;
+    }
+    .cartBody .orderSummary{
+        display: block;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    .cartBody .hiddenSummary{
+        display: block;
+        width: 95%;
+        position: fixed;
+        bottom: 0;
+        z-index: 1;
+        background-color: white;
+        margin-top: 40px;
+    }
+    .cartBody .hiddenSummary .hiddenTotal{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .cartBody .hiddenSummary .hiddenTotal div:first-child{
+        font-weight: 600;
+    }
+    .cartBody.hiddenSummary .hiddenButton{
+      margin-top: 10px;
+    }
+    .cartBody .hiddenSummary .hiddenButton button{
+        width: 100%;
+        height: 40px;
+        background-color: #111;
+        color: #cfcccc;
+        text-transform: uppercase;
+    }
+    .cartBody .row .checkoutBTN{
+        display: none;
+    }
+    .cartBody .cartContainerHeader .cartHeader h3{
+        font-size: 1.8rem;
+    }
+    .cartContainerHeader .continueShoppingContainer a{
+        font-size: 1rem;
+        color: #575757;
+    }
+    .cartBody  .hiddenSummary{
+        height: auto;
+    }
+}
+@media(max-width: 550px){
+    .cartContainerHeader .cartHeader h3{
+        font-size: 1.2rem;
+    }
+    .cartContainerHeader .continueShoppingContainer a{
+        font-size: 1rem;
+        color: #575757;
+    }
+    .cartBody .itemName{
+        font-size: .9rem;
+    }
+    .cartBody .sizeText, .cartBody .size{
+      font-size: .8rem;
+      margin-top: 10px;
+    }
+    .itemOptions button{
+        font-size: .9rem;
+    }
+     .itemFieldsTop .itemPrice p{
+        font-size: .9rem;
+    }
+    .itemQuantityContainer label{
+        font-size: .9rem;
+    }
+    .itemQuantityContainer input[type='number']{
+        font-size: .9rem;
+    }
+     .cartBody .orderSummary{
+        margin-bottom: 30px;
+    }
+    .cartBody .hiddenSummary{
+        margin-top: 20px;
+        height: auto;
+    }
+
+}
+
+/* Css for Bottom Nav */
+.bottomNav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.bottomNavHeader{
+   color: white;
+   margin-left: 30px;
+   font-size: 1rem;
+}
+.bottomNavLinks{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.bottomNavLinks ul{
+    list-style: none;
+}
+.bottomNavLinks ul li{
+    display: inline-block;
+    padding: 0 30px;
+}
+.bottomNavLinks ul li a{
+    /* text-decoration: none; */
+    font-size: 1.1rem;
+    color: #918f8f;
+}
+.BNL{
+    color: white;
+}
+.bottomNavLinks a:link{
+    text-decoration: none;
+}
+.bottomNavLinks a:visited{
+    text-decoration: none;
+}
+.bottomNavLinks a:hover{
+    color: #202020;
+}
+.bottomNavLinks a:active{
+    color: #111;
+    font-size: 2.3rem;
+}
+@media(max-width: 750px){
+.bottomNav{
+    background-color: black;
+    height: 40px;
+    position: relative;
+}
+.bottomNavHeader{
+    font-size: 1rem;
+}
+#bottomNavi{
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 2;
+    background-color: #918f8f;
+}
+.bottomNavLinks ul{
+    border: 1px solid white;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.bottomNavLinks ul li{
+    display: block;
+    height: 50px;
+    border-bottom: 1px solid #d6d4d4;
+}
+.bottomNavLinks ul li:hover{
+    background-color: #d5d4d4;
+}
+
+.bottomNavLinks ul li a{
+    width: 100%;
+    line-height: 50px;
+    font-size: 1.2rem;
+    color: #040404;
+}
+}
+
+/* CSS for my Account */
+.accountBody{
+    position: relative;
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* add hover for two boxes */
+.infoBox{ 
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    vertical-align: top;
+    width: 45%;
+    height: 600px;
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+}
+.infoBox:hover{
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    border: .5px solid rgb(233, 232, 232);
+}
+.infoBox .infoHeading{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.addressBox{
+    margin: 30px 0;
+    padding: 10px;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+.addressBox .addressHeading{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #111;
+    font-weight: 500;
+}
+.addressBox .addy{
+    line-height: 30px;
+    color: #000000;
+    font-weight: 400;
+}
+.infoButton{
+    position: relative;
+    bottom: 0;
+    display: block;
+    width: 300px;
+    height: 40px;
+    border: 2px solid black;
+    font-size: 1rem;
+    background-color: transparent;
+    color: black;
+}
+.infoButton:hover{
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+.ordersBox{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    vertical-align: top;
+    width: 45%;
+    height: 600px;
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+}
+.ordersBox:hover{
+    transform: scale(1.075);
+    transition: 0.3s ease-in;
+    cursor: pointer;
+    border: .5px solid rgb(233, 232, 232);
+}
+.ordersBox .ordersHeading{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.ordersBox .ordersTable{
+    width: 100%;
+    margin: 30px auto;
+}
+
+.ordersTable table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.ordersTable td, th{
+   border: 1px solid black;
+   vertical-align: middle;
+}
+.ordersTable tr:first-child{
+    height: 30px;
+}
+.ordersTable tr:nth-child(even){
+    background-color: #ffffff;
+}
+.ordersTable  td{
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+    
+ }
+ /* Media Query for My Account */
+ @media(max-width:970px){
+    .infoButton{
+       margin: 0 auto;
+    }
+    .infoBox{
+        padding: 5px;
+    }
+ }
+ @media(max-width:800px){
+    .infoButton{
+       margin: 0 auto;
+    }
+    .addressBox p{
+        font-size: 1rem;
+    }
+ }
+ @media(max-width:750px){
+    .infoBox .infoHeading{
+        font-size: 1.1rem;
+    }
+    .addressBox .addressHeading{
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    .addressBox .addy{
+        line-height: 25px;
+    }
+    .infoButton{
+        width: 250px;
+    }
+ }
+ @media(max-width:750px){
+    .accountBody{
+        position: relative;
+        margin-top: 30px;
+        width: 100%;
+        display: block;
+    }
+    .infoBox{ 
+        position: relative;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        height: auto;
+    }
+    .infoButton{
+        margin-left: 15px;
+        width: 200px;
+     }
+     .ordersBox{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 90%;
+        display: block;
+        margin: 50px auto;
+        height: 600px;
+        padding: 20px;
+        background-color: rgb(243, 240, 240);
+    }
+ }
+
+ /* My Orders Page */
+ .myOrderBody{
+    width: 80%;
+    margin: 60px auto;
+    padding: 20px;
+}
+.myOrderBody .myOrderBodyHeader{
+    margin-bottom: 50px;
+}
+.myOrderBody .myOrderBodyHeader h3{
+    font-size: 2.9rem;
+    font-weight: 400;
+}
+.myOrderContainer{
+    margin-top: 40px;
+}
+.myOrderContainer .orderPlaceHeading{
+    background-color: #ebe9e9;
+    height: 40px;
+}
+.myOrderContainer .orderPlaceHeading span{
+    line-height: 40px;
+    font-size: 1.2rem;
+}
+.myOrderContainer .orderPlaceHeading span:first-child{
+    padding-left: 20px;
+    font-weight: 800;
+}
+.myOrderContainer .orderDetailContainer{
+    padding-left: 20px;
+    margin-top: 20px;
+}
+.myOrderContainer .orderDetailContainer .row{
+   display: inline-block;
+   width: 33%;
+}
+.myOrderContainer .orderDetailContainer .row:last-child{
+    vertical-align: top;
+ }
+.orderNumberDetails{
+    padding-bottom: 20px;
+}
+.row p{
+    line-height: 24px;
+    font-size: 1.1rem;
+}
+.row .title{
+    font-weight: 800;
+}
+@media(max-width: 1200px){
+    .myOrderBody{
+        width: 90%;
+    }
+    .myOrderContainer .orderDetailContainer .row{
+        display: inline-block;
+        width: 25%;
+     }
+}
+@media(max-width: 750px){
+    .myOrderBody{
+        width: 98%;
+        padding: 5px;
+    }
+     .myOrderContainer .orderPlaceHeading{
+        height: 60px;
+        text-align: center;
+        width: 100%;
+    }
+    .myOrderContainer .orderPlaceHeading span{
+        line-height: 60px;
+    }
+    .myOrderContainer .orderPlaceHeading span:first-child{
+        font-weight: 800;
+    }
+    .orderNumberDetails p,.orderTotalDetails p{
+        display: inline-block;
+    }
+    .myOrderContainer .orderDetailContainer .row{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 100%;
+     }
+     .myOrderContainer .orderDetailContainer .row:last-child(){
+        margin-top: 20px;
+     }
+     .myOrderContainer .orderDetailContainer{
+        padding-left: 20px;
+    }
+    .orderDetailContainer .title{
+        margin-right: 5px;
+    }
+}
+@media(max-width: 500px){
+.myOrderBody .myOrderBodyHeader h3{
+    font-size: 2.5rem;
+}
+}
+
+
+
+/* Checkout Nav */
+.checkoutNav{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px;
+    height: 80px;
+    border-bottom: 1px solid #000000;
+}
+.checkoutNav .backout{
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    float: left;
+}
+.checkoutNav .backout a{
+   text-decoration: none;
+}
+
+.checkoutNav .backout i{
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+}
+.checkoutNav .backout i::before{
+    font-size: 10px;
+    vertical-align: middle;
+    font-weight: 800;
+}
+.navMain{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.navMain p{
+    font-size: 2.2rem;
+}
+
+
+ /* CSS for Personal Info container */
+ .personalInfoBody{
+     width: 70%;
+     margin: 50px auto;
+     padding: 20px;
+ }
+ .personalInfoBody h3{
+     margin-bottom: 40px;
+     font-size: 2.5rem;
+     font-weight: 400;
+ }
+.userRow{
+    width: 100%;
+    border-bottom: 1px solid #918f8f;
+}
+.userRow .userFieldBox{
+    height: 50px;
+    width: 40%;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+}
+.userRow .userFieldBox span{
+    display: block;
+    margin-bottom: 10px;
+}
+.userRow .userFieldBox span:first-child{
+   font-size: 1.3rem;
+   font-weight: 800;
+   color: rgb(13, 14, 14);
+}
+.userRow .userFieldBox span:nth-child(2){
+    font-size: 1.2rem;
+    color: #949494;
+    font-weight: 500;
+ }
+
+.userRow .editUserInfo{
+    display: inline-block;
+    width: 40%;
+    margin: 10px 10px 40px 0;
+}
+.userRow .editUserInfo a{
+    color: #949494;
+}
+.userRow .changeUserPass a{
+    color: #949494;
+}
+.defaultInfoInner{
+    width: 100%;
+}
+#editInfo{
+    width: 100%;
+    display: none;
+}
+#changePasswordDiv{
+    width: 100%;
+    display: none;
+}
+.changePasswordContainer{
+    width: 100%;
+}
+ .editPersonalInfo{
+    width: 100%;
+}
+.editUserInfoBTN{
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #949494;
+    text-decoration: underline;
+}
+.editPersonalInfo .nameFields{
+    display: flex;
+    justify-content: space-between;
+}
+.nameFields .nameContainer{
+    width: 48%;
+}
+.editPersonalInfo label,.changePasswordContainer label{
+    font-size: 1.2rem;
+    color: #918f8f;
+}
+.editPersonalInfo input[type=text],input[type=email]{
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid #949494;
+    padding-left: 20px;
+}
+.changePasswordContainer input[type=password]{
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid #949494;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.editPersonalInfo input:focus{
+    outline: none;
+}
+.emailField{
+    margin-top: 30px;
+}
+.infoFunctionField{
+    margin: 20px 0 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+.infoFunctionField .containers{
+    width: 48%;
+}
+.infoFunctionField .containers button{
+    width: 100%;
+    height: 40px;
+    background-color: #111;
+    color: #cfcccc;
+}
+
+
+
+/* CSS for Personal Info Address Container */
+.addressHeader{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.addressHeader h3{
+    width: 50%;
+    height: 50px;
+    margin-bottom: 0px !important;
+}
+.addressHeader button{
+    width: 30%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 20px;
+}
+.addressHeader button:hover{
+    height: 50px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+.addressRow{
+    width: 100%;
+    border-bottom: 1px solid #918f8f;
+    padding-bottom: 50px;
+}
+.paymentRow{
+    width: 100%;
+    border-bottom: 1px solid #918f8f;
+    padding-bottom: 50px;
+}
+
+.newDIV{
+    width: 100%;
+}
+.addressRow:last-child{
+    border: none;
+}
+.paymentRow:last-child{
+    border: none;
+}
+
+.addressRow .addressBoxMain{
+    width: 100%;
+    margin-top: 50px;
+}
+.addressRow .addressBoxMain h5{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.addressDetails{
+    display: inline-block;
+    margin: 0 15% 5% 0;
+}
+.addressDetails p{
+    font-size: 1.2rem;
+    color: #949494;;
+    font-weight: 500;
+    margin: 15px 0;
+}
+.addressDetails p:first-child{
+    font-size: 1.2rem;
+    color: #202020;;
+    font-weight: 500;
+}
+.paymentRow .paymentBoxMain{
+    width: 100%;
+    margin-top: 50px;
+}
+.paymentRow .paymentBoxMain h5{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.paymentDetails{
+    display: inline-block;
+    margin: 0 15% 5% 0;
+}
+.paymentDetails p{
+    font-size: 1.2rem;
+    color: #949494;;
+    font-weight: 500;
+    margin: 15px 0;
+}
+.paymentDetails p:first-child{
+    font-size: 1.2rem;
+    color: #202020;;
+    font-weight: 500;
+}
+
+
+/* css for add address form */
+#addAddressDiv{
+    width: 100%;
+    display: none;
+}
+.addAddressContainer{
+    width: 100%;
+}
+.addAddressContainer label{
+    font-size: 1.2rem;
+    color: #918f8f;
+}
+.addAddressContainer .addressUserNameFields,.cityAPTField,.stateZipField,.cardUserNameField{
+    display: flex;
+    justify-content: space-between;
+}
+.addressUserNameFields .addressUserNameContainer,.cityAPTField .cityContainer,.stateZipField .stateContainer,.cardUserNameField .cardUserNameContainer{
+    width: 48%;
+}
+#editAddressDiv{
+    width: 100%;
+    display: none;
+}
+.addCardContainer label{
+    font-size: 1.2rem;
+    color: #918f8f;
+}
+.addAddressContainer input[type=text]{
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid #949494;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    height: 40px;
+}
+.addCardContainer input[type=text]{
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid #949494;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    height: 40px;
+}
+.editAddressBTN, .rcBTN{
+    margin-top: 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #949494;
+    text-decoration: underline;
+    display: block;
+}
+#addPayment{
+    width: 100%;
+    display: none;
+}
+.addCardContainer{
+    width: 100%;
+}
+.addressBoxMain a{
+    color: #918f8f;
+}
+
+@media(max-width:1000px){
+    .personalInfoBody h3{
+        font-size: 2.1rem;
+    }
+    .addressHeader h3{
+        width: 70%;
+        height: 50px;
+        margin-bottom: 0px !important;
+    }
+    .addressHeader button{
+        width: 40%;
+        height: 50px;
+        border: 1px solid black;
+        background-color: transparent;
+        font-size: 20px;
+    }
+}
+@media(max-width: 750px){
+    .personalInfoBody{
+        width: 90%;
+    }
+    .userRow .userFieldBox span:first-child{
+        font-size: 1.1rem;
+     }
+     .userRow .userFieldBox span:nth-child(2){
+        font-size: 1rem;
+     }
+     .addressRow .addressBoxMain{
+         display: block;
+     }
+     .paymentRow .paymentBoxMain{
+        display: block;
+    }
+     .addressHeader h3{
+        width: fit-content;
+        height: 50px;
+        margin-bottom: 0px !important;
+    }
+    .addressHeader button{
+        width: 30%;
+        height: 50px;
+        border: 1px solid black;
+        background-color: transparent;
+        font-size: 20px;
+    }
+}
+@media(max-width: 550px){
+    .personalInfoBody{
+        padding: 10px;
+        width: 100%;
+    }
+    .personalInfoBody h3{
+        font-size: 1.8rem;
+    }
+    .userRow .userFieldBox{
+        display: block;
+        width: 100%;
+    }
+    .userRow .editUserInfo{
+        display: inline-block;
+        width: fit-content;
+        margin: 10px 30px 40px 0;
+    }
+    .personalInfoBody h3{
+        font-size: 1.8rem;
+    }
+    .addressHeader h3{
+        width: 80%;
+        height: 50px;
+        margin-bottom: 0px !important;
+    }
+    .addressHeader{
+        margin-top: 50px;
+        display: block;
+    }
+    .addressHeader button{
+        width: 80%;
+        height: 50px;
+        border: 1px solid black;
+        background-color: transparent;
+        font-size: 20px;
+    }
+    .addressDetails{
+        width: 100%;
+        display: block;
+        margin-bottom: 40px;
+    }
+    .paymentDetails{
+        display: block;
+        margin-bottom: 40px;
+    }
+}
+@media(max-width:400px){
+   .personalInfoBody h3{
+       font-size: 1.5rem;
+   }
+}
+
+/* checkout body */
+.checkoutBody{
+    width: 74%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+#cForm{
+    display: flex;
+    justify-content: space-between;
+}
+.checkoutBody .checkoutSteps{
+    width: 48%;
+    display: inline-block;
+}
+.checkoutSteps .row{
+    border-bottom: 1px solid black;
+    padding: 20px 0 15px 0;
+}
+.checkoutSteps .row:last-child{
+    border: none;
+}
+.infoStepBox .stepHeading{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.infoStepBox .stepHeading .step{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.pickAddressLabel{
+    display: flex;
+    position: absolute;
+    padding-left: 10px;
+    font-size: 12px;
+    z-index: 1;
+    top: 1;
+}
+.selectContainer{
+    width: 100%;
+}
+.infoStepBox .shippingInfo select,.infoStepBox .paymentInfo select{
+    width: 100%;
+    padding: 15px 0 0 5px;
+    height: 45px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.nextBTN{
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+}
+
+
+/* add address */
+/* dont copy */
+#addShippingInfo{
+    display: none;
+}
+#addPaymentInfo{
+    display: none;
+}
+.addAddressContainer{
+    width: 100%;
+}
+/* copy */
+.addShippingInfo .addAddressContainer label{
+    font-size: 1rem;
+    color: #918f8f;
+}
+.addAddressContainer .addressUserNameFields,.cityAPTField,.stateZipField,.cardUserNameField{
+    display: flex;
+    justify-content: space-between;
+}
+/* copy */
+.addShippingInfo .addressUserNameFields .addressUserNameContainer,.cityAPTField .cityContainer,.stateZipField .stateContainer,.cardUserNameField .cardUserNameContainer{
+    width: 48%;
+}
+#editAddressDiv{
+    width: 100%;
+    display: none;
+}
+.addCardContainer label{
+    font-size: 1.2rem;
+    color: #918f8f;
+}
+.addShippingInfo .addAddressContainer input[type=text]{
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-bottom: 1px solid #949494;
+    padding-left: 20px;
+    margin-bottom: 30px;
+    height: 25px;
+}
+
+ /* end */
+ .shippingInfoFunctions{
+    margin: 20px 0 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shippingInfoFunctions .checkoutBTN,.completeBTN{
+    width: 100%;
+    border: 1px solid rgb(12, 7, 7);
+    height: 45px;
+    background-color: rgb(0, 0, 0);
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.completeBTN{
+    margin-top: 30px;
+     background-color: black;
+     color: white;
+}
+.completeBTN:hover{
+    background-color: transparent;
+    color: black;
+
+}
+.shippingInfoFunctions .checkoutBTN:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.shippingInfoFunctionsAdds{
+    margin: 20px 0 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shippingInfoFunctionsAdds .functionsBTN{
+    width: 49%;
+    border: 1px solid black;
+    height: 45px;
+    background-color: black;
+    color: white;
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.shippingInfoFunctionsAdds .functionsBTN:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.addCardBox input{
+    height: 45px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+.cardMaxBox{
+    margin-bottom: 20px;
+}
+.cardMaxBox input{  
+   width: 100%;
+}
+.cardNameBox{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.cardNameBox div{
+    width: 48%;
+}
+.cardNameBox input{
+    width: 100%;
+}
+.cardInfoBox{
+    display: flex;
+    justify-content: space-between;
+}
+.cardInfoBoxInner{
+   width: 30%;
+}
+.cardInfoBoxInner input{
+   width: 100%;
+}
+.methodContainers{
+    margin: 20px 0;
+}
+
+/* checkout  */
+
+.checkoutBody .orderSummary{
+    width: 40%;
+    vertical-align: top;
+    padding-top: 20px;
+}
+.checkoutBody .orderSummaryHeading{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+ .checkoutBody .orderSummary .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+ .checkoutBody .orderSummary .row2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 150px;
+}
+.checkoutBody .orderSummary .row .col{
+    font-size: 1.2rem;
+}
+.checkoutBody .orderSummary .row .total{
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.checkoutBody .orderSummaryInner{
+    width: 100%;
+    margin-bottom: 30px;
+}
+.checkoutBody .orderSummaryInner:nth-child(3){
+    border-top: 1px solid #575757;
+    padding-top: 35px;
+}
+.checkoutBody .orderSummaryInner:nth-child(3) .row{
+    border-bottom: 1px solid #575757;
+    padding: 0 0 20px 0;
+}
+.checkoutBody .orderSummaryInner .shoppingBagHeader p{
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.checkoutBody .row2 .merchImg{
+    width: 30%;
+    display: inline-block;
+}
+.checkoutBody .row2 .merchImg img{
+    width: 100%;
+}
+.checkoutBody .bagContent{
+  display: inline-block;
+  width: 60%;
+}
+.checkoutBody .bagContent .bagName{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.checkoutBody .bagName p{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.checkoutBody .bagContent .bagInfo{
+    margin-bottom: 20px;
+}
+.checkoutBody .bagInfo p{
+    font-size: .9rem;
+    margin: 10px 0
+}
+
+.checkoutBody .bagContent a{
+    text-decoration: none;
+    text-transform: uppercase;
+    list-style: none;
+    color: #575757;
+}
+.checkoutBody .sumHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkoutBody #toggleOrderSummary{
+    display: none;
+}
+.checkoutBody .sumHeading .orderSummaryHeading{
+    margin-bottom: 0 !important;
+}
+
+
+@media(max-width: 1300px){
+    .checkoutBody{
+        width: 95%;
+        margin: 50px 20px
+    }
+} 
+@media(max-width: 780px){
+    .infoStepBox .stepHeading .step{
+        font-size: 1.2rem;
+    }
+}
+@media(max-width: 500px){
+    .addCardBox input{
+        font-size: .8rem;
+    }
+}
+@media(max-width: 750px){
+    .infoStepBox .stepHeading .step{
+        font-size: 1.4rem;
+        font-weight: 500;
+    }
+    .cardInfoContainer .cardInfoContainerInner label{
+        font-size: .6rem;
+    }
+    .checkoutNav{
+        padding: 0 5px;
+    }
+    .navMain{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+    .navMain p{
+        font-size: 1.8rem;
+    }
+    .checkoutBody .orderSummary{
+        display: block;
+        width: 45%;
+    }
+    
+}
+@media(max-width: 900px){
+    .checkoutBody{
+        display: block;
+    }
+    .checkoutBody #cForm{
+        display: block;
+    }
+    .checkoutBody .checkoutSteps{
+        display: block;
+        width: 100%;
+    }
+    .checkoutBody .infoStepBox .stepHeading .step{
+        font-size: 1.6rem;
+    }
+    .checkoutBody .orderSummary{
+        display: block;
+        width: 100%;
+    }
+    .checkoutBody .bagName p{
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    .checkoutBody .bagInfo p{
+        font-size: 1rem;
+    }
+    .checkoutBody #toggleOrderSummary{
+        display: block;
+        border: none;
+        cursor: pointer;
+    }
+    .checkoutBody #mobileSummary{
+        display: none;
+    }
+    .checkoutBody .navMain p{
+        font-size: 1.8rem;
+    }
+}
+.merchBody2{
+    height: 100vh;
+}
+/* CSS for footer */
+.footer{
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    margin: 2% 0 0 0;
+    padding: 2% 0;
+    position: relative;
+    bottom: 0;
+}
+.pageWidth{
+  margin: 0 2%;
+  padding: 0 2%;
+}
+.footerContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footerContentInner{
+  display: inline-block; 
+  margin-right: 50px;    
+}
+.footerLinks {
+  padding: 20px 10px;
+}
+.footerLinks ul li{
+  display: inline-block;
+  padding: 0 5px;
+  list-style: none;
+
+}
+.footerLinks ul li a{
+  text-decoration: none;
+  color: rgb(104, 101, 101);
+}
+.footerHeaders{
+ padding: 5px;
+ margin-bottom: 20px;
+}
+.newsLetter{
+  padding: 5px;
+}
+.footerform{
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.newsInput[type="email"]{
+  padding-left: 10px;
+  border: 1px thin;
+  height: 40px;
+  width: 300px;
+  padding-right: 75px;
+  font-size: 15px;
+}
+.newsBTN{
+  margin-left: -75px;
+  border: none;
+  width: 75px;
+  height: 40px;
+  background-color: rgb(70, 69, 69);
+  color: rgb(235, 235, 235);
+  font-size: 12px;
+}
+
+
+/* Media Query for footer */
+@media(max-width: 700px){
+  .footer{
+      margin-top: 40px;
+      padding: 0;
+  }
+  .footerContent{
+      display: inline-block;
+  }
+  .footerContentInner{
+      vertical-align: top;
+      margin-right: 0;
+      width: 100%;
+
+  }
+  .newsInput{
+      border: 1px thin;
+      height: 32px;
+      width: 150px;
+      font-size: 15px;
+  }
+  .newsBTN{
+      border: 3px;
+      width: 20%;
+
+  }
+  .pageWidth{
+      margin: 0 2%;
+      padding: 0 2%;
+  }
+  .newsLetterForms{
+      width: 100%;
+  }
+}
+
+@media(max-width: 450px){
+    .newsInput{
+        border: 1px thin;
+        height: 32px;
+        width: 150px;
+        font-size: 15px;
+        padding-right: 100px;
+    }
+    .newsBTN{
+        margin-left: -100px;
+        width: 100px;
+    }
+    .pageWidth{
+        margin: 0 2%;
+        padding: 0 2%;
+    }
+    .newsLetterForms{
+        width: 100%;
+    }
+  }
+  .logInNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #575757;
+}
+.logInBody{
+  width: 40%;
+  margin: 10% auto;
+}
+.logInBodyContainer h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+.logInBody input{ 
+   border: none;
+   border-bottom: 1px solid #d8d7d7;
+   width: 100%;
+   padding-left: 20px !important;
+   margin-bottom: 30px;
+   height: 40px;
+   font-size: 1.2rem;
+}
+.logInBTN{
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: #000000;
+    color: white;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+.registerLine{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#registerButton{
+    border: none;
+    text-decoration: underline;
+    background-color: transparent;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.twoCol{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col{
+    width: 48%;
+}
+
+.logInBody label{
+    color: #918f8f;
+}
+.logInnavMain p{
+    font-size: 2.5rem;
+}
+#registerForm{
+    display: none;
+}
+@media(max-width: 900px){
+    .logInnavMain p{
+        font-size: 2rem;
+    }
+    .logInBody{
+        width: 98%;
+      }
+      .logInBodyContainer h2{
+          font-size: 1.5rem;
+      }
+
+}
+@media(max-width: 450px){
+      .logInBodyContainer h2{
+          font-size: 1.2rem;
+      }
+
+}
+
+
+  
+#toggleDown{
+    background-color: transparent;
+
+}
+.checkoutBody #toggleOrderSummary{
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+
+.activeLabel{
+    background-color:  #d5d4d4;
+}
+.noRez{
+    font-size: 2rem;
+}
