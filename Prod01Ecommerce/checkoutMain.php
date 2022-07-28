@@ -3,20 +3,41 @@ session_start();
 require_once('connection.php');
 
 $user = $_SESSION['user'];
-$fetchAddress = mysqli_query($conn,"SELECT address_line, address_id FROM address WHERE client_id = (SELECT client_id FROM client WHERE username='$user')");
-$fetchPayment = mysqli_query($conn,"SELECT card_number, payment_id FROM payment WHERE client_id = (SELECT client_id FROM client WHERE username='$user')");
 
-$fetchCart = mysqli_query($conn,"SELECT product_img,product_name,product_price,size,quantity,product.product_id,cart_item.cart_item_id FROM product INNER JOIN cart_item ON product.product_id = cart_item.product_id WHERE
-cart_item.cart_id = (SELECT cart_id FROM cart WHERE client_id = (SELECT client_id FROM client WHERE username = '$user'))");
+// SQL statement to fetch the address information of the user
+$fetchAddress = mysqli_query($conn,"SELECT address_line, address_id 
+                                    FROM address WHERE client_id = 
+                                    (SELECT client_id FROM client WHERE username='$user')");
 
- $getTargets = mysqli_fetch_array(mysqli_query($conn,"SELECT SUM(quantity) FROM product INNER JOIN cart_item ON product.product_id = cart_item.product_id WHERE cart_item.cart_id = (SELECT cart_id FROM cart WHERE client_id = (SELECT client_id FROM client WHERE username = '$user'))"));
- $getTarget2 = mysqli_query($conn,"SELECT product_price,quantity FROM product INNER JOIN cart_item ON product.product_id = cart_item.product_id WHERE cart_item.cart_id = (SELECT cart_id FROM cart WHERE client_id = (SELECT client_id FROM client WHERE username = '$user'))");
+//SQL statement to fetch the payment informations of the user
+$fetchPayment = mysqli_query($conn,"SELECT card_number, payment_id 
+                                    FROM payment WHERE client_id = 
+                                    (SELECT client_id FROM client WHERE username='$user')");
 
+// SQL statement to fetch all of the items in the cart.
+$fetchCart = mysqli_query($conn,"SELECT product_img,product_name,product_price,size,quantity,product.product_id,cart_item.cart_item_id
+                            FROM product INNER JOIN cart_item ON product.product_id = cart_item.product_id 
+                            WHERE cart_item.cart_id = 
+                           (SELECT cart_id FROM cart WHERE client_id = (SELECT client_id FROM client WHERE username = '$user'))");
+
+//SQL statement to fetch the quantity and price of all of the products in the cart.
+ $getTargets = mysqli_fetch_array(mysqli_query($conn,"SELECT SUM(quantity) 
+                                               FROM product INNER JOIN cart_item
+                                               ON product.product_id = cart_item.product_id WHERE cart_item.cart_id = 
+                                              (SELECT cart_id FROM cart WHERE client_id = (SELECT client_id FROM client WHERE username = '$user'))"));
+ $getTarget2 = mysqli_query($conn,"SELECT product_price,quantity 
+                                  FROM product INNER JOIN cart_item ON product.product_id = cart_item.product_id 
+                                  WHERE cart_item.cart_id = 
+                                 (SELECT cart_id FROM cart WHERE client_id = (SELECT client_id FROM client WHERE username = '$user'))");
+
+ // multiplies the price of each item with its quantity
 while($tt = mysqli_fetch_array($getTarget2)){
     $subbie += ($tt['product_price'] * $tt['quantity']);
     // $subbie = 1;
 }
 
+
+// adds a new user input address
 if(isset($_POST['AtoD'])){
     $first_name = $_POST['addressFname'];
     $last_name = $_POST['addressLname'];
@@ -27,11 +48,18 @@ if(isset($_POST['AtoD'])){
     $zip = $_POST['zip'];
     $state = $_POST['state'];
     
-    $addAddressSql = mysqli_query($conn,"INSERT INTO address (client_id,address_line,city,zip,address_name,first_name,last_name,state,apt) VALUES(
-        (SELECT client_id FROM client WHERE username='$user'),'$address_line','$city','$zip','$address_name','$first_name','$last_name','$state','$apt')") or die(mysqli_error($conn));
+    $addAddressSql = mysqli_query($conn,"INSERT INTO address (client_id,address_line,city,zip,address_name,first_name,last_name,state,apt) 
+                                         VALUES((
+                                         SELECT client_id 
+                                         FROM client 
+                                         WHERE username='$user'),'$address_line','$city','$zip','$address_name','$first_name','$last_name','$state','$apt')") 
+                                         or die(mysqli_error($conn));
+
      $address_id = mysqli_insert_id($conn);
      header("location: checkoutMain.php");
 }
+
+// adds a new user input payment method
 if(isset($_POST['PtoD'])){
   $cardNumber = $_POST['cardNumber'];
   $first_name = $_POST['fName'];
@@ -40,12 +68,19 @@ if(isset($_POST['PtoD'])){
   $expYear = $_POST['expYear'];
   $cvc = $_POST['cvc'];
 
-  $addPaymentSQL = mysqli_query($conn,"INSERT INTO payment (client_id,card_number,exp_month,exp_year,cvc,first_name,last_name) VALUES (
-      (SELECT client_id FROM client WHERE username='$user'),'$cardNumber','$expMonth','$expYear','$cvc','$first_name','$last_name')") or die(mysqli_error($conn));
+  $addPaymentSQL = mysqli_query($conn,"INSERT INTO payment (client_id,card_number,exp_month,exp_year,cvc,first_name,last_name) 
+                                       VALUES((
+                                       SELECT client_id 
+                                       FROM client 
+                                       WHERE username='$user'),'$cardNumber','$expMonth','$expYear','$cvc','$first_name','$last_name')") 
+                                       or die(mysqli_error($conn));
+
    $payment_id = mysqli_insert_id($conn);
    header("location: checkoutMain.php");
 }
 
+
+// user completes the transaction
 if(isset($_POST['complete'])){
     $address_id = $_POST['shippingaddress'];
     $payment_id = $_POST['paymentMethod'];
@@ -63,8 +98,23 @@ if(isset($_POST['complete'])){
         $shippingPrice = 15.00;
     }
     $total = floatval(($subbie + $shippingPrice) * 1.07);
-    $sql = mysqli_query($conn,"INSERT INTO orders (client_id,address_id,payment_id,status,order_date,quantity,total) VALUES((SELECT client_id FROM client where username='$user'),'$address_id','$payment_id','$order_status','$order_date','$quantity','$total')") or die(mysqli_error($conn));
-    $removesql = mysqli_query($conn,"DELETE FROM cart_item WHERE cart_id = (SELECT cart_id from cart WHERE client_id = (SELECT client_id from client WHERE username='$user'))");
+    
+
+    // inserts the completed transaction in the users completed orders section
+    $sql = mysqli_query($conn,"INSERT INTO orders (client_id,address_id,payment_id,status,order_date,quantity,total) 
+                               VALUES((
+                               SELECT client_id 
+                               FROM client 
+                               WHERE username='$user'),'$address_id','$payment_id','$order_status','$order_date','$quantity','$total')") 
+                               or die(mysqli_error($conn));
+
+    //removes all of the items from the cart after the transaction is completed.
+    $removesql = mysqli_query($conn,"DELETE FROM cart_item 
+                                     WHERE cart_id = (
+                                     SELECT cart_id 
+                                     FROM cart 
+                                     WHERE client_id = (
+                                     SELECT client_id FROM client WHERE username='$user'))");
     echo '<script>alert("Transaction Complete! Redirecting to Orders page");
                     window.location="orders.php";</script>';
 
@@ -98,7 +148,7 @@ if(isset($_POST['complete'])){
     </nav>
 
     <section class="checkoutBody">
-        <form id="cForm"name="checkoutForm" action="checkoutMain.php" method="post">
+        <form id="cForm" name="checkoutForm" action="checkoutMain.php" method="post">
             <div class="checkoutSteps">
                 <div class="row">
                     <div class="infoStepBox">
@@ -291,7 +341,7 @@ if(isset($_POST['complete'])){
                         <hr>
                         <div class="row">
                             <div class="total">Total:</div>
-                            <div class="col"><span>$</span><span name="total"id="k4">0</span></div>
+                            <div class="col"><span>$</span><span name="total" id="k4">0</span></div>
                         </div>
 
                     </div>
@@ -326,12 +376,12 @@ if(isset($_POST['complete'])){
 </body>
 <script src="index.js"></script>
 <script>
-      function resetMenu() {  
-    if(window.innerWidth > 900){
-      document.getElementById('mobileSummary').style.display = 'block';
+function resetMenu() {
+    if (window.innerWidth > 900) {
+        document.getElementById('mobileSummary').style.display = 'block';
     }
-    }
-    window.addEventListener('resize',resetMenu);
+}
+window.addEventListener('resize', resetMenu);
 </script>
 
 </html>

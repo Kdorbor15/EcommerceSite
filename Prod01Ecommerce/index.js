@@ -1,4 +1,6 @@
+   
 
+  // javascript function to show and hide the navbar while in mobile state.
   function showNav(){
     if(document.getElementById('navLinks').classList.contains('isActiveNav')){
       document.getElementById('navLinks').classList.remove('isActiveNav');
@@ -8,6 +10,7 @@
   }
 
 
+// javascript function to display the name of the selected category
 function showLabel(){
   if(window.location.pathname.split("/").pop() == 'personalInfo.php'){
     document.getElementById("bottomNavLabel").innerHTML = "Personal Info"
@@ -21,7 +24,7 @@ function showLabel(){
   }
 }
 
-
+// javascript function to display the bottom nav bar
 function toggleBottomNav() {
     var x = document.getElementById("bottomNavi");
     if (x.style.display === "block") {
@@ -32,6 +35,7 @@ function toggleBottomNav() {
   }
   
   
+// jquery function to hide or show the edit user information field
 $(document).ready(function(){
     $("#showDefaultField").click(function(){
       $("#editInfo").hide(300);
@@ -43,6 +47,7 @@ $(document).ready(function(){
     });
   });
 
+  // jquery functon to hide or show the change password field.
   $(document).ready(function(){
     $("#passToDefault").click(function(){
       $("#changePasswordDiv").hide(300);
@@ -54,7 +59,7 @@ $(document).ready(function(){
     });
   });
 
-
+// jquery function to hide or show the add address field
   $(document).ready(function(){
     $("#addAddressToDefault").click(function(){
       $("#addAddressDiv").hide(300);
@@ -80,6 +85,7 @@ $(document).ready(function(){
  
 
 
+  // jquery function to hide or show the add payment method field
   $(document).ready(function(){
     $("#paymentToDefault").click(function(){
       $("#addPayment").hide();
@@ -92,43 +98,43 @@ $(document).ready(function(){
   });
   
 
-  //checkout
-  // add Address
-  $(document).ready(function(){
-    $("#DtoA").click(function(){
-      $("#addShippingInfo").show();
-      $('.addShippingInfo input').keyup(function() {
+  // NOT COMP completed
+  // jquery function to validarte user input.
+  // $(document).ready(function(){
+  //   $("#DtoA").click(function(){
+  //     $("#addShippingInfo").show();
+  //     $('.addShippingInfo input').keyup(function() {
       
-        var empty = false;
-        $('.requiredInput').prop('required',true);
-        $('.requiredInput').each(function() {
-            if ($(this).val().length == 0) {
-                empty = true;
-            }
-        });                   
+  //       var empty = false;
+  //       $('.requiredInput').prop('required',true);
+  //       $('.requiredInput').each(function() {
+  //           if ($(this).val().length == 0) {
+  //               empty = true;
+  //           }
+  //       });                   
     
-        if (empty) {
-            $('#AtoD').attr('disabled', 'disabled');
-        } else {
-            $('#AtoD').removeAttr('disabled');
-        }
-      });
+  //       if (empty) {
+  //           $('#AtoD').attr('disabled', 'disabled');
+  //       } else {
+  //           $('#AtoD').removeAttr('disabled');
+  //       }
+  //     });
 
-      $("#defaultShippingInfo").hide();
-    });
-    $("#cancelAddy").click(function(){
-      $("#addShippingInfo").hide();
-      $("#defaultShippingInfo").show();
-   });
-   $('.requiredAttribute').removeAttr('required');
-  });
-
-
+  //     $("#defaultShippingInfo").hide();
+  //   });
+  //   $("#cancelAddy").click(function(){
+  //     $("#addShippingInfo").hide();
+  //     $("#defaultShippingInfo").show();
+  //  });
+  //  $('.requiredAttribute').removeAttr('required');
+  // });
 
 
 
 
-  // continue to Payment Method BTN
+
+
+  // jquery function to hide or show user payment info
   $(document).ready(function(){
     $("#DtoP").click(function(){
       $("#addPaymentInfo").show();
@@ -136,7 +142,7 @@ $(document).ready(function(){
     }); 
   });
 
-
+    // javascript function to change the shipping price when user clicks a radio button
     function getShippingPrice(){
       var price = $("input[name=rad]:checked").val();
       var k1 = document.getElementById("k1").innerHTML;
@@ -147,15 +153,16 @@ $(document).ready(function(){
       document.getElementById("k1").innerHTML = parseFloat(k1).toFixed(2);
     }
 
-
+  
   $(document).ready(function(){
     $(document).on('change','.rad',function(){
       getShippingPrice();
- 
     });
   });
 
   
+
+  // jquery function to hide or show the mobile order summary.
   $(document).ready(function(){
     $("#toggleOrderSummary").click(function(){
       $("#mobileSummary").toggle();
@@ -165,7 +172,7 @@ $(document).ready(function(){
 
 
 
-
+  // jquery function to switch between the register field or the log in field.
   $(document).ready(function(){
     $("#registerButton").click(function(){
       $("#registerForm").show();

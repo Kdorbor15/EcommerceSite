@@ -1,470 +1,464 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@200;300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@200;300;400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-body{
-    font-family: "poppins",sans-serif;
+body {
+  font-family: "poppins", sans-serif;
 }
-form{
-    margin-left: 0 !important;
+form {
+  margin-left: 0 !important;
 }
 /* CSS for Header and Nav */
-.header{
-    height: auto;
-    width: 100%;
+.header {
+  height: auto;
+  width: 100%;
 }
-.headerTitle{
-     height: 50px;
-     background-color: rgb(13, 14, 14);
-     text-align: center;
-     line-height: 50px;
+.headerTitle {
+  height: 50px;
+  background-color: rgb(13, 14, 14);
+  text-align: center;
+  line-height: 50px;
 }
-.headerTitle p{
-    color: #fff;
-   font-size: 20px;
-   font-weight: 300;
+.headerTitle p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
 }
-.topNav{
-    padding: 0 2%;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} 
+.topNav {
+  padding: 0 2%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.navLogo a{
-    text-decoration: none;
+.navLogo a {
+  text-decoration: none;
 }
-.navLogo p{
-    font-family: 'Abril Fatface', cursive;
-    color: rgb(22, 22, 22);
-    font-size: 2rem;
-    font-weight: 300 !important;
-} 
- 
-.navLinks{
-    width: 30%;
+.navLogo p {
+  font-family: "Abril Fatface", cursive;
+  color: rgb(22, 22, 22);
+  font-size: 2rem;
+  font-weight: 300 !important;
+}
+
+.navLinks {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLinks ul {
+  text-decoration: none;
+}
+.navLinks ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+.navLinks ul li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+.navIcons {
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navIcons form input[type="text"] {
+  border: 1px solid rgb(194, 191, 191);
+  border-radius: 20px;
+  width: 100%;
+  height: 2.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  /* transform: scale(0); */
+}
+.navIcons form .bi {
+  margin-left: -2rem;
+  width: 1rem;
+  color: black;
+  font-size: 1.2rem;
+}
+.navIcons i {
+  font-size: 1.2rem;
+  color: black;
+}
+
+.bi-list {
+  display: none;
+}
+.bi-x {
+  display: none;
+}
+.mobileSearch form {
+  display: none;
+}
+#searchForm {
+  width: 50%;
+}
+@media (max-width: 1300px) {
+  .topNav {
+    padding: 0 1%;
+  }
+  .navLinks {
+    margin: 0;
+    width: 40%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-.navLinks ul{
-    text-decoration: none;
-}
-.navLinks ul li{
+  }
+  .navLinks ul li {
     display: inline-block;
-    padding: 0 20px;
-}
-.navLinks ul li a{
+    padding: 0 10px;
+  }
+  .navLinks ul li a {
     font-size: 20px;
     text-decoration: none;
     color: black;
-}
-.navIcons{
+  }
+  .navIcons {
     display: flex;
     width: 30%;
     justify-content: space-evenly;
     align-items: center;
-} 
-.navIcons #personIcon,#cartIcon{
+  }
 
-}
-.navIcons form input[type="text"]{
-    border: 1px solid rgb(194, 191, 191);
-    border-radius: 20px;
-    width: 100%;
-    height: 2.5rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    /* transform: scale(0); */
-}
-.navIcons form  .bi{
+  .navIcons form .bi {
     margin-left: -2rem;
     width: 1rem;
     color: black;
     font-size: 1.2rem;
+  }
 }
-.navIcons i{
-    font-size: 1.2rem;
+@media (max-width: 950px) {
+  .topNav {
+    padding: 0 1%;
+  }
+  .navLogo p {
+    font-size: 1.5rem;
+  }
+  .navLinks {
+    margin: 0;
+    width: 40%;
+  }
+  .navLinks ul li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+  .navLinks ul li a {
+    font-size: 18px;
+    text-decoration: none;
     color: black;
+  }
+  .navIcons {
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .navIcons form .bi {
+    margin-left: -2rem;
+    width: 1rem;
+    color: black;
+    font-size: 1.2rem;
+  }
 }
 
-.bi-list{
-    display: none;
-}
-.bi-x{
-    display: none;
-}
-.mobileSearch form{
-    display: none;
-}
- #searchForm{
-    width: 50%;
-}
-@media(max-width: 1300px){
-    .topNav{
-        padding: 0 1%;
-    } 
-    .navLinks{
-        margin: 0;
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .navLinks ul li{
-        display: inline-block;
-        padding: 0 10px;
-    }
-    .navLinks ul li a{
-        font-size: 20px;
-        text-decoration: none;
-        color: black;
-    }
-    .navIcons{
-        display: flex;
-        width: 30%;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+@media (max-width: 750px) {
+  .headerTitle p {
+    font-size: 15px;
+  }
+  .topNav {
+    padding: 0;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .topNav .bi-list {
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    font-size: 1.5rem;
+  }
+  .bi.bi-x {
+    margin: 0 10px;
+    width: auto;
+    display: block;
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 
-    .navIcons form  .bi{
-        margin-left: -2rem;
-        width: 1rem;
-        color: black;
-        font-size: 1.2rem;
-    }
-}
-@media(max-width: 950px){
-    .topNav{
-        padding: 0 1%;
-    } 
-    .navLogo p{
-        font-size: 1.5rem;
-    }
-    .navLinks{
-        margin: 0;
-        width: 40%;
-    }
-    .navLinks ul li{
-        display: inline-block;
-        padding: 0 10px;
-    }
-    .navLinks ul li a{
-        font-size: 18px;
-        text-decoration: none;
-        color: black;
-    }
-    .navIcons{
-        display: flex;
-        width: 40%;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .navIcons form  .bi{
-        margin-left: -2rem;
-        width: 1rem;
-        color: black;
-        font-size: 1.2rem;
-    }
-}
-
-@media(max-width: 750px){
-    .headerTitle p{
-       font-size: 15px;
-    }
-    .topNav{
-        padding: 0;
-        height: 75px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .topNav .bi-list{
-        color: black;
-        font-size: 1rem;
-        cursor: pointer;
-        display: block;
-        font-size: 1.5rem;
-    }
-    .bi.bi-x{
-        margin: 0 10px;
-        width: auto;
-        display: block;
-        color: black;
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    .navLogo p{
-        font-size: 1.5rem;
-    }
-    .navLinks{
-        margin-left: 0;
-        display: block;
-        position: absolute;
-        background-color: #fff;
-        height: 100vh;
-        width: 100%;
-        top: 150px;
-        left: -100%;
-        text-align: left;
-        z-index: 2;
-        transition: 1s;
-    }
-    .navLinks:nth-child(2){
-        text-align: center;
-    }
-    .navLinks ul{
-        display: block;
-        padding: 10px;
-    }
-    .navLinks ul li{
-        display: block;
-        padding: 20px;
-        width: 100%;
-        border-bottom: 1px solid rgb(122, 122, 122);
-        text-align: center;
-    }
-    .navLinks ul li a{
-        text-align: center;
-        font-size: 20px;
-    }
-
-    .navIcons{
-        display: flex;
-    }
-    
-    .navIcons form{
-        display: none;
-    }
-    .navIcons #icons{
-        display: inline-block;
-        font-size: 1.5rem;
-        margin: 0 20px;
-    }
-    .navIcons form input[type="text"]{
-        border: 1px solid rgb(194, 191, 191);
-        border-radius: 20px;
-        width: 150px;
-        height: 2.5rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-    #hideMenu{
-        height: auto;
-    }
-    .navIcons form  .bi{
-        margin-left: -2rem;
-        width: 1rem;
-        color: black;
-        font-size: 1rem;
-    } 
-    .mobileSearch form{
-        display: block;
-    }
-    .mobileSearch form input[type="text"]{
-        width: 90%;
-        border-radius: 20px;
-        height: 40px;
-        padding-right: 1.2rem;
-        padding-left: 20px;
-    }
-    .mobileSearch form i{
-        margin-left: -2.5rem;
-        color: black;
-        font-size: 1.2rem;
-    }
-}
-.banner{
-    height: auto;
-}
-.banner img{
-    height: 700px;
+  .navLogo p {
+    font-size: 1.5rem;
+  }
+  .navLinks {
+    margin-left: 0;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    height: 100vh;
     width: 100%;
-    opacity: 0.8;
-}
-.merchBody{
-    margin-top: 50px;
-    background-color: rgb(255, 255, 255);
-}
-
-.merchBody h1{
+    top: 150px;
+    left: -100%;
+    text-align: left;
+    z-index: 2;
+    transition: 1s;
+  }
+  .navLinks:nth-child(2) {
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
-}
-.merchBox{
-    padding-top: 2%;
-    width: 80%;
-    margin: 5% auto;
-}
-.merch{
+  }
+  .navLinks ul {
+    display: block;
+    padding: 10px;
+  }
+  .navLinks ul li {
+    display: block;
+    padding: 20px;
     width: 100%;
+    border-bottom: 1px solid rgb(122, 122, 122);
+    text-align: center;
+  }
+  .navLinks ul li a {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .navIcons {
+    display: flex;
+  }
+
+  .navIcons form {
+    display: none;
+  }
+  .navIcons #icons {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin: 0 20px;
+  }
+  .navIcons form input[type="text"] {
+    border: 1px solid rgb(194, 191, 191);
+    border-radius: 20px;
+    width: 150px;
+    height: 2.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  #hideMenu {
+    height: auto;
+  }
+  .navIcons form .bi {
+    margin-left: -2rem;
+    width: 1rem;
+    color: black;
+    font-size: 1rem;
+  }
+  .mobileSearch form {
+    display: block;
+  }
+  .mobileSearch form input[type="text"] {
+    width: 90%;
+    border-radius: 20px;
+    height: 40px;
+    padding-right: 1.2rem;
+    padding-left: 20px;
+  }
+  .mobileSearch form i {
+    margin-left: -2.5rem;
+    color: black;
+    font-size: 1.2rem;
+  }
+}
+.banner {
+  height: auto;
+}
+.banner img {
+  height: 700px;
+  width: 100%;
+  opacity: 0.8;
+}
+.merchBody {
+  margin-top: 50px;
+  background-color: rgb(255, 255, 255);
+}
+
+.merchBody h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.merchBox {
+  padding-top: 2%;
+  width: 80%;
+  margin: 5% auto;
+}
+.merch {
+  width: 100%;
+  height: 350px;
+  padding: 1%;
+  display: inline-block;
+  vertical-align: top;
+}
+.merch .merchBTN {
+  text-align: center;
+  width: 40%;
+  height: 12%;
+  margin: 6% 30%;
+  background-color: rgb(27, 27, 27);
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: rgb(56, 42, 42) solid 1px;
+  border-radius: 12px;
+  position: relative;
+  display: none;
+}
+.merch .merchBTN:hover {
+  background-color: white;
+  color: rgb(230, 117, 117);
+}
+.merch:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.993);
+  border: 0.5px solid rgb(233, 232, 232);
+}
+.merch:hover .merchBTN {
+  display: block;
+  top: -30%;
+  transition: 0.3s ease-in;
+}
+.merch img {
+  width: 100%;
+  height: 50%;
+  display: block;
+}
+.merchContent {
+  display: block;
+  margin-top: 5%;
+  text-align: center;
+}
+.merchContent .name {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.merchContent .price {
+  font-size: 15px;
+  color: rgb(128, 128, 128);
+}
+.merch img {
+  width: 100%;
+}
+@media (max-width: 1100px) {
+  .merchBox {
+    padding-top: 2%;
+    width: 100%;
+    margin: 5% 0;
+  }
+  .merchForm {
+    width: 33%;
     height: 350px;
     padding: 1%;
     display: inline-block;
     vertical-align: top;
+  }
 }
-.merch .merchBTN{
-    text-align: center;
-    width: 40%;
-    height: 12%;
-    margin: 6% 30%;
-    background-color: rgb(27, 27, 27);
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    border: rgb(56, 42, 42) solid 1px;
-    border-radius: 12px;
-    position: relative;
-    display: none;
-}
-.merch .merchBTN:hover{
-  background-color: white;
-  color: rgb(230, 117, 117);
-}
-.merch:hover{
-    transform: scale(1.075);
-    transition: 0.3s ease-in;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.993);
-    border: .5px solid rgb(233, 232, 232);
-}
-.merch:hover .merchBTN{
-    display: block;
-    top: -30%;
-    transition: 0.3s ease-in;
-}
-.merch img{
+@media (max-width: 899px) {
+  .merchBox {
+    padding-top: 2%;
     width: 100%;
-    height: 50%;
-    display: block;
+    margin: 5% 0;
+  }
+  .merchForm {
+    width: 31%;
+  }
 }
-.merchContent{
+@media (max-width: 600px) {
+  .merchForm {
     display: block;
-    margin-top: 5%;
+    width: 80%;
+    margin: 30px auto;
+    height: 400px;
+  }
+
+  .merchContent {
+    display: block;
+    margin-top: 10px;
     text-align: center;
-}
-.merchContent .name{
-    font-size: 20px;
+  }
+  .merchContent .name {
+    font-size: 30px;
     text-transform: uppercase;
     font-weight: 600;
-}
-.merchContent .price{
-    font-size: 15px;
+  }
+  .merchContent .price {
+    font-size: 20px;
     color: rgb(128, 128, 128);
-}
-.merch img{
-    width: 100%;
-}
-@media(max-width:1100px){ 
-    .merchBox{
-        padding-top: 2%;
-        width: 100%;
-        margin: 5% 0;
-    }
-    .merchForm{
-        width: 33%;
-        height: 350px;
-        padding: 1%;
-        display: inline-block;
-        vertical-align: top;
-    }
-}
-@media(max-width:899px){ 
-    .merchBox{
-        padding-top: 2%;
-        width: 100%;
-        margin: 5% 0;
-    }
-    .merchForm{
-        width: 31%;
-    }
-}
-@media(max-width:600px){ 
-    .merchForm{
-        display: block;
-        width: 80%;
-        margin: 30px auto;
-        height: 400px;
-
-    }
-
-    .merchContent{
-        display: block;
-        margin-top: 10px;
-        text-align: center;
-    }
-    .merchContent .name{
-        font-size: 30px;
-        text-transform: uppercase;
-        font-weight: 600;
-    }
-    .merchContent .price{
-        font-size: 20px;
-        color: rgb(128, 128, 128);
-    }
-    .merch:hover .merchBTN{
-        display: block;
-        top: -40%;
-        transition: 0.3s ease-in;
-    }
+  }
+  .merch:hover .merchBTN {
+    display: block;
+    top: -40%;
+    transition: 0.3s ease-in;
+  }
 }
 /* CSS for footer */
-.footer{
-    background-color: rgb(247, 247, 247);
-    margin: 2% 0 0 0;
-    padding: 2% 0;
+.footer {
+  background-color: rgb(247, 247, 247);
+  margin: 2% 0 0 0;
+  padding: 2% 0;
 }
-.pageWidth{
+.pageWidth {
   margin: 0 2%;
   padding: 0 2%;
 }
-.footerContent{
+.footerContent {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.footerContentInner{
-  display: inline-block; 
-  margin-right: 50px;    
+.footerContentInner {
+  display: inline-block;
+  margin-right: 50px;
 }
 .footerLinks {
   padding: 20px 10px;
 }
-.footerLinks ul li{
+.footerLinks ul li {
   display: inline-block;
   padding: 0 5px;
   list-style: none;
-
 }
-.footerLinks ul li a{
+.footerLinks ul li a {
   text-decoration: none;
   color: rgb(104, 101, 101);
 }
-.footerHeaders{
- padding: 5px;
- margin-bottom: 20px;
+.footerHeaders {
+  padding: 5px;
+  margin-bottom: 20px;
 }
-.newsLetter{
+.newsLetter {
   padding: 5px;
 }
-.footerform{
+.footerform {
   margin-left: 5px;
   display: flex;
   align-items: center;
 }
-.newsInput[type="email"]{
+.newsInput[type="email"] {
   padding-left: 10px;
   border: 1px thin;
   height: 40px;
@@ -472,7 +466,7 @@ form{
   padding-right: 75px;
   font-size: 15px;
 }
-.newsBTN{
+.newsBTN {
   margin-left: -75px;
   border: none;
   width: 75px;
@@ -482,1302 +476,1295 @@ form{
   font-size: 12px;
 }
 
-
 /* Media Query for footer */
-@media(max-width: 700px){
-  .footer{
-      margin-top: 40px;
-      padding: 0;
+@media (max-width: 700px) {
+  .footer {
+    margin-top: 40px;
+    padding: 0;
   }
-  .footerContent{
-      display: inline-block;
+  .footerContent {
+    display: inline-block;
   }
-  .footerContentInner{
-      vertical-align: top;
-      margin-right: 0;
-      width: 100%;
-
-  }
-  .newsInput{
-      border: 1px thin;
-      height: 32px;
-      width: 150px;
-      font-size: 15px;
-  }
-  .newsBTN{
-      border: 3px;
-      width: 20%;
-
-  }
-  .pageWidth{
-      margin: 0 2%;
-      padding: 0 2%;
-  }
-  .newsLetterForms{
-      width: 100%;
-  }
-}
-@media(max-width: 450px){
-    .newsInput{
-        border: 1px thin;
-        height: 32px;
-        width: 150px;
-        font-size: 15px;
-        padding-right: 100px;
-    }
-    .newsBTN{
-        margin-left: -100px;
-        width: 100px;
-    }
-    .pageWidth{
-        margin: 0 2%;
-        padding: 0 2%;
-    }
-    .newsLetterForms{
-        width: 100%;
-    }
-  }
-
-
-
-
-
-  /* CSS for merchandise page */
-  .merchBody2{
-    margin-top: 50px;
+  .footerContentInner {
+    vertical-align: top;
+    margin-right: 0;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  .newsInput {
+    border: 1px thin;
+    height: 32px;
+    width: 150px;
+    font-size: 15px;
+  }
+  .newsBTN {
+    border: 3px;
+    width: 20%;
+  }
+  .pageWidth {
+    margin: 0 2%;
+    padding: 0 2%;
+  }
+  .newsLetterForms {
+    width: 100%;
+  }
 }
-.merchInfo{
-    width: 90%;
-    height: 350px;
+@media (max-width: 450px) {
+  .newsInput {
+    border: 1px thin;
+    height: 32px;
+    width: 150px;
+    font-size: 15px;
+    padding-right: 100px;
+  }
+  .newsBTN {
+    margin-left: -100px;
+    width: 100px;
+  }
+  .pageWidth {
+    margin: 0 2%;
+    padding: 0 2%;
+  }
+  .newsLetterForms {
+    width: 100%;
+  }
+}
+
+/* CSS for merchandise page */
+.merchBody2 {
+  margin-top: 50px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.merchInfo {
+  width: 90%;
+  height: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.merchPicture {
+  height: 100%;
+  width: 40%;
+}
+.merchPicture img {
+  height: 100%;
+  width: 100%;
+}
+.merchWritings {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.merchWritings h1 {
+  font-size: 2.8rem;
+  font-weight: 400;
+  /* change font family */
+  margin-bottom: 20px;
+}
+.merchWritings .price {
+  font-size: 1.5rem;
+  color: rgb(109, 109, 109);
+  font-weight: 500;
+  margin-bottom: 45px;
+}
+.merchSizing .sizeForm {
+  width: 65%;
+  margin-left: 0;
+  display: inline-block;
+}
+.merchSizing p {
+  font-size: 30px;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+}
+#shoeSize {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+.option {
+  display: block;
+  margin-bottom: 40px;
+}
+.quantityBox {
+  vertical-align: top;
+  margin-left: 0%;
+  width: 20%;
+  height: 100%;
+  display: inline-block;
+}
+.quantityBox form {
+  margin-left: 0;
+  height: 100%;
+}
+.quantityBox form input[type="number"] {
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+.merchFunction {
+  width: 65%;
+}
+.merchFunction button {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background-color: rgb(27, 27, 27);
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: rgb(56, 42, 42) solid 1px;
+  border-radius: 12px;
+}
+.merchFunction button:hover {
+  background-color: rgb(209, 209, 209);
+  color: rgb(230, 117, 117);
+}
+
+@media (max-width: 1100px) {
+  .merchWritings h1 {
+    font-size: 2.5rem;
+  }
+  #shoeSize {
+    height: 38px;
+  }
+  .quantityBox form input[type="number"] {
+    height: 38px;
+  }
+  .merchFunction button {
+    height: 38px;
+  }
+}
+@media (max-width: 900px) {
+  .merchInfo {
+    width: 100%;
+  }
+  .merchWritings h1 {
+    font-size: 2.4rem;
+  }
+  .merchWritings .price {
+    font-size: 1.2rem;
+  }
+  .merchSizing p {
+    font-size: 25px;
+  }
+  #shoeSize {
+    height: 30px;
+  }
+  .quantityBox form input[type="number"] {
+    height: 30px;
+  }
+
+  .merchFunction {
+    width: 65%;
+  }
+  .merchFunction button {
+    height: 30px;
+  }
+}
+@media (max-width: 700px) {
+  .merchBody2 {
+    margin-top: 50px;
+    display: block;
+  }
+  .merchInfo {
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
-}
-.merchPicture{
-    height: 100%;
-    width: 40%;
-}
-.merchPicture img{
-    height: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .merchPicture {
+    height: 50%;
     width: 100%;
-}
-.merchWritings{
+    margin-bottom: 20px;
+  }
+
+  .merchWritings {
     display: flex;
     height: 100%;
     flex-direction: column;
-}
-.merchWritings h1{
-    font-size: 2.8rem;
-    font-weight: 400;
-    /* change font family */
-    margin-bottom: 20px;
-}
-.merchWritings .price{
+    align-items: flex-start;
+  }
+  .merchWritings h1 {
+    font-size: 2.5rem;
+  }
+  .merchWritings .price {
     font-size: 1.5rem;
-    color: rgb(109, 109, 109);
-    font-weight: 500;
-    margin-bottom: 45px;
-}
-.merchSizing .sizeForm{
-    width: 65%;
-    margin-left: 0;
-    display: inline-block;
-}
-.merchSizing p{
-    font-size: 30px;
-    font-weight: 400;
-    color: rgb(34, 34, 34);
-}
-#shoeSize{
-    width: 100%;
-    height: 40px;
-    font-size: 20px;
-    text-align: center;
- }
- .option{
-    display: block;
-    margin-bottom: 40px;
-}
-.quantityBox{
-    vertical-align: top;
-    margin-left: 0%;
-    width: 20%;
-    height: 100%;
-    display: inline-block;
-}
-.quantityBox form{
-    margin-left: 0;
-    height: 100%;
-}
-.quantityBox form input[type=number]{
-    height: 40px;
-    width: 100px;
-    text-align: center;
-    font-size: 20px;
- }
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button {  
-   opacity: 1;
-}
-
-.merchFunction{
-    width: 65%;
-}
-.merchFunction button{
-    width: 100%;
-    height: 40px;
-    text-align: center;
-    background-color: rgb(27, 27, 27);
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    border: rgb(56, 42, 42) solid 1px;
-    border-radius: 12px;
-}
-.merchFunction button:hover{
-    background-color: rgb(209, 209, 209);
-    color: rgb(230, 117, 117);
-}
-
-  @media(max-width: 1100px){
-    .merchWritings h1{
-        font-size: 2.5rem;
-    }
-    #shoeSize{
-        height: 38px;
-     }
-    .quantityBox form input[type=number]{
-        height: 38px;
-     }
-    .merchFunction button{
-        height: 38px;
-    }
-
   }
-  @media(max-width:900px){
-    .merchInfo{
-        width: 100%;
-    }
-    .merchWritings h1{
-        font-size: 2.4rem;
-    }
-    .merchWritings .price{
-        font-size: 1.2rem;
-    }
-    .merchSizing p{
-        font-size: 25px;
-    }
-    #shoeSize{
-        height: 30px;
-     }
-    .quantityBox form input[type=number]{
-        height: 30px;
-     }
+}
 
-    
-    .merchFunction{
-        width: 65%;
-    }
-    .merchFunction button{
-        height: 30px;
-    }
+/* CSS for cart */
+.cartBody {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+}
+.cartBody .cartContainerHeader {
+  width: 80%;
+  margin: 50px auto 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartContainerHeader .cartHeader h3 {
+  font-size: 2.2rem;
+}
+.cartContainerHeader .continueShoppingContainer a {
+  font-size: 1.2rem;
+  color: #575757;
+}
+.cartBody .cartContainer {
+  display: inline-block;
+  width: 50%;
+  margin-top: 30px;
+}
+.cartBody .mainContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.cartContainer .cartItems {
+  height: 250px;
+  border-bottom: 1px solid #d8d6d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hiddenSummary {
+  display: none;
+}
+.itemRow .itemImageContainer {
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+}
+.itemRow .itemImageContainer img {
+  width: 100%;
+  height: 100%;
+}
+.cartItems .itemFields {
+  display: inline-block;
+  vertical-align: top;
+  width: 60%;
+  margin-left: 9%;
+}
+.itemFields .itemFieldsTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.itemContent .itemName {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+}
+.itemContent .size {
+  font-size: 1.2rem;
+}
+.itemContent .sizeText {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.itemFieldsTop .itemPrice p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+}
+
+.itemFieldsBottom {
+  display: flex;
+  justify-content: space-between;
+}
+.itemQuantityContainer p {
+  font-size: 1.2rem;
+}
+.itemQuantityContainer label {
+  margin-right: 10px;
+}
+.itemQuantityContainer input[type="number"] {
+  border: none;
+  font-size: 1.1rem;
+}
+.itemOptions button {
+  color: #575757;
+  font-size: 1.2rem;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.orderSummary {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  margin-top: 50px;
+}
+.orderSummaryHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.orderSummary .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.orderSummary .row .col {
+  font-size: 1.2rem;
+}
+.orderSummary .row .total {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.orderSummary hr {
+  color: #cfcccc;
+}
+.row .checkoutBTN {
+  width: 100%;
+  height: 35px;
+  background-color: #000000;
+  color: #dddddd;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+@media (max-width: 1000px) {
+  .cartBody {
+    margin-top: 0;
   }
-  @media(max-width:700px){
-    .merchBody2{
-        margin-top: 50px;
-        display:  block;
-    }
-    .merchInfo{
-        width: 80%;
-        margin: 0 auto;
-        height: auto;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: flex-start;
-        flex-direction: column;
-    }
-    .merchPicture{
-        height: 50%;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .merchWritings{
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .merchWritings h1{
-        font-size: 2.5rem;
-    }
-    .merchWritings .price{
-        font-size: 1.5rem;
-    }
+  .cartBody .cartContainerHeader {
+    width: 95%;
   }
-
-  /* CSS for cart */
-.cartBody{
-    margin-top: 50px;
-    width: 100%;
-    height: auto;
-}
-.cartBody .cartContainerHeader{
-    width: 80%;
-    margin: 50px auto 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.cartContainerHeader .cartHeader h3{
-    font-size: 2.2rem;
-}
-.cartContainerHeader .continueShoppingContainer a{
-    font-size: 1.2rem;
-    color: #575757;
-}
-.cartBody .cartContainer{
-    display: inline-block;
-    width: 50%;
-    margin-top: 30px;
-}
-.cartBody .mainContainer{
-    width: 80%;
+  .cartBody .cartContainer {
+    width: 55%;
+    margin-top: 10px;
+  }
+  .orderSummary {
+    width: 35%;
+  }
+  .cartBody .mainContainer {
+    width: 95%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+  }
 }
-.cartContainer .cartItems{
-    height: 250px;
-    border-bottom: 1px solid #d8d6d6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.hiddenSummary{
-    display: none;
-}
-.itemRow .itemImageContainer{
-    width: 30%;
-    height: 100%;
-    display: inline-block;
-}
-.itemRow .itemImageContainer img{
-    width: 100%;
-    height: 100%;
-}
-.cartItems .itemFields{
-    display: inline-block;
-    vertical-align: top;
+@media (max-width: 850px) {
+  .cartBody .cartContainer {
     width: 60%;
-    margin-left: 9%;
-}
-.itemFields .itemFieldsTop{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-}
-
-.itemContent .itemName{
-   font-size: 1.3rem;
-   font-weight: 400;
-   color: rgb(34, 34, 34)
-} 
-.itemContent .size{
+    margin-top: 10px;
+  }
+  .cartContainer .cartItems {
+    height: 170px;
+  }
+  .itemRow .itemImageContainer {
+    width: 35%;
+    height: 100%;
+  }
+  .cartItems .itemFields {
+    margin-left: 2%;
+  }
+  .itemContent .itemName {
     font-size: 1.2rem;
- }  
- .itemContent .sizeText{
+  }
+  .itemContent .size {
     font-size: 1.1rem;
-    font-weight: 500;
- } 
- .itemFieldsTop .itemPrice p{
-     font-size: 1.3rem;
-     font-weight: 400;
-     color: rgb(34, 34, 34)
- }
- 
- .itemFieldsBottom{
-    display: flex;
-    justify-content: space-between;
- }
- .itemQuantityContainer p{ 
+  }
+  .itemContent .sizeText {
+    font-size: 1rem;
+  }
+  .itemFieldsTop .itemPrice p {
     font-size: 1.2rem;
-}
-.itemQuantityContainer label{
-    margin-right: 10px;
-}
-.itemQuantityContainer input[type='number']{
-    border: none;
+  }
+  .itemQuantityContainer p {
+    font-size: 1rem;
+  }
+  .itemQuantityContainer select {
+    font-size: 1rem;
+  }
+  .itemOptions a {
     font-size: 1.1rem;
-}
-.itemOptions button{
-    color: #575757;
-    font-size: 1.2rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    text-decoration: underline;
-}
-.orderSummary{
+  }
+  .orderSummary {
     display: inline-block;
     width: 30%;
     vertical-align: top;
     margin-top: 50px;
-}
-.orderSummaryHeading{
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
-.orderSummary .row{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-}
-.orderSummary .row .col{
+  }
+  .orderSummaryHeading {
+    font-size: 1.4rem;
+  }
+
+  .orderSummary .row .col {
+    font-size: 1.1rem;
+  }
+  .orderSummary .row .total {
     font-size: 1.2rem;
-}
-.orderSummary .row .total{
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-.orderSummary hr{
+  }
+  .orderSummary hr {
     color: #cfcccc;
+  }
 }
-.row .checkoutBTN{
+@media (max-width: 600px) {
+  .cartBody .cartContainer {
+    display: block;
     width: 100%;
-    height: 35px;
-    background-color: #000000;
-    color: #dddddd;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-@media(max-width: 1000px){
-    .cartBody{
-        margin-top: 0;
-    }
-    .cartBody .cartContainerHeader{
-        width: 95%;
-    }
-    .cartBody .cartContainer{
-        width: 55%;
-        margin-top: 10px;
-    }
-    .orderSummary{
-        width: 35%;
-    }
-    .cartBody .mainContainer{
-        width: 95%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-}
-@media(max-width: 850px){
-
-    .cartBody .cartContainer{
-        width: 60%;
-        margin-top: 10px;
-    }
-    .cartContainer .cartItems{
-        height: 170px;
-    }
-    .itemRow .itemImageContainer{
-        width: 35%;
-        height: 100%;
-    }
-    .cartItems .itemFields{
-        margin-left: 2%;
-    }
-    .itemContent .itemName{
-       font-size: 1.2rem;
-    } 
-    .itemContent .size{
-        font-size: 1.1rem;
-     }  
-     .itemContent .sizeText{
-        font-size: 1rem;
-     } 
-     .itemFieldsTop .itemPrice p{
-         font-size: 1.2rem;
-     }
-     .itemQuantityContainer p{ 
-        font-size: 1rem;
-    }
-    .itemQuantityContainer select{ 
-        font-size: 1rem;
-    }
-    .itemOptions a{
-        font-size: 1.1rem;
-    }
-    .orderSummary{
-        display: inline-block;
-        width: 30%;
-        vertical-align: top;
-        margin-top: 50px;
-    }
-    .orderSummaryHeading{
-        font-size: 1.4rem;
-    }
-
-    .orderSummary .row .col{
-        font-size: 1.1rem;
-    }
-    .orderSummary .row .total{
-        font-size: 1.2rem;
-    }
-    .orderSummary hr{
-        color: #cfcccc;
-    }    
-}
-@media(max-width: 600px){
-
-    .cartBody .cartContainer{
-        display: block;
-        width: 100%;
-        margin-top: 10px;
-    }
-    .cartBody .mainContainer{
-        width: 95%;
-        flex-direction: column;
-    }
-    .itemRow .itemImageContainer{
-        width: 30%;
-    }
-    .orderSummary{
-        display: block;
-        width: 100%;
-        margin-top: 50px;
-    }
-    .hiddenSummary{
-        display: block;
-        width: 95%;
-        position: fixed;
-        bottom: 0;
-        z-index: 1;
-        height: 100px;
-        background-color: white;
-    }
-    .hiddenSummary .hiddenTotal{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .hiddenSummary .hiddenTotal div:first-child{
-        font-weight: 600;
-    }
-    .hiddenSummary .hiddenButton{
-      margin-top: 10px;
-    }
-    .hiddenSummary .hiddenButton button{
-        width: 100%;
-        height: 40px;
-        background-color: #111;
-        color: #cfcccc;
-        text-transform: uppercase;
-    }
-    .row .checkoutBTN{
-        display: none;
-    }
-    .cartContainerHeader .cartHeader h3{
-        font-size: 1.8rem;
-    }
-    .cartContainerHeader .continueShoppingContainer a{
-        font-size: 1rem;
-        color: #575757;
-    }
-}
-@media(max-width: 500px){
-    .cartContainerHeader .cartHeader h3{
-        font-size: 1.5rem;
-    }
-    .cartContainerHeader .continueShoppingContainer a{
-        font-size: 1rem;
-        color: #575757;
-    }
-}
-
-/* Css for Account Page */
-    .bottomNav{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-    }
-    .bottomNavHeader{
-       color: white;
-       margin-left: 30px;
-       font-size: 1rem;
-    }
-    .bottomNavLinks{
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    .bottomNavLinks ul{
-        list-style: none;
-    }
-    .bottomNavLinks ul li{
-        display: inline-block;
-        padding: 0 30px;
-    }
-    .bottomNavLinks ul li a{
-        /* text-decoration: none; */
-        font-size: 1.1rem;
-        color: #918f8f;
-    }
-    .BNL{
-        color: white;
-    }
-    .bottomNavLinks a:link{
-        text-decoration: none;
-    }
-    .bottomNavLinks a:visited{
-        text-decoration: none;
-    }
-    .bottomNavLinks a:hover{
-        color: #202020;
-    }
-    .bottomNavLinks a:active{
-        color: #111;
-        font-size: 2.3rem;
-    }
-@media(max-width: 750px){
-    .bottomNav{
-        background-color: black;
-        height: 40px;
-        position: relative;
-    }
-    .bottomNavHeader{
-        font-size: 1rem;
-    }
-    #bottomNavi{
-        display: none;
-        width: 100%;
-        position: absolute;
-        left: 0;
-        top: 40px;
-        z-index: 9999;
-        background-color: #918f8f;
-    }
-    .bottomNavLinks ul{
-        width: 100%;
-    }
-    .bottomNavLinks ul li{
-        display: block;
-        height: 50px;
-        border-bottom: 1px solid #d6d4d4;
-    }
-    .bottomNavLinks ul li:first-child{
-        background-color: #dfdddd;
-        font-weight: 600;
-    }
-    .bottomNavLinks ul li a{
-        width: 100%;
-        line-height: 50px;
-        font-size: 1.2rem;
-        color: #111111;
-    }
-}
-
-
-/* CSS for my Account */
-.accountBody{
-    position: relative;
-    margin-top: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-/* add hover for two boxes */
-.infoBox{ 
-    position: relative;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    vertical-align: top;
-    width: 45%;
-    height: 600px;
-    padding: 20px;
-    background-color: rgb(243, 240, 240);
-}
-.infoBox:hover{
-    transform: scale(1.075);
-    transition: 0.3s ease-in;
-    cursor: pointer;
-    border: .5px solid rgb(233, 232, 232);
-}
-.infoBox .infoHeading{
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-.addressBox{
-    margin: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
+  }
+  .cartBody .mainContainer {
+    width: 95%;
+    flex-direction: column;
+  }
+  .itemRow .itemImageContainer {
     width: 30%;
-    display: inline-block;
-}
-.addressBox .addressHeading{
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-    color: #111;
-    font-weight: 500;
-}
-.addressBox .addy{
-    line-height: 30px;
-    color: #000000;
-    font-weight: 400;
-}
-.infoButton{
-    position: relative;
+  }
+  .orderSummary {
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .hiddenSummary {
+    display: block;
+    width: 95%;
+    position: fixed;
     bottom: 0;
-    margin-left: 20px;
-    display: block;
-    width: 300px;
-    height: 40px;
-    border: 2px solid black;
-    font-size: 1rem;
-    background-color: transparent;
-    color: black;
-}
-.infoButton:hover{
-    background-color: #000000;
-    color: white;
-    cursor: pointer;
-}
-.ordersBox{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    vertical-align: top;
-    width: 45%;
-    height: 600px;
-    padding: 20px;
-    background-color: rgb(243, 240, 240);
-}
-.ordersBox:hover{
-    transform: scale(1.075);
-    transition: 0.3s ease-in;
-    cursor: pointer;
-    border: .5px solid rgb(233, 232, 232);
-}
-.ordersBox .ordersHeading{
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-.ordersBox .ordersTable{
-    width: 100%;
-    margin: 30px auto;
-}
-
-.ordersTable table{
-    width: 100%;
-    border-collapse: collapse;
-}
-.ordersTable td, th{
-   border: 1px solid black;
-}
-.ordersTable tr:first-child{
-    height: 30px;
-}
-.ordersTable tr:nth-child(even){
-    background-color: #dddddd;
-}
-.ordersTable  td{
-      width: 50px;
-      height: 50px;
-      text-align: center;
- }
- /* Media Query for My Account */
- @media(max-width:800px){
-    .infoButton{
-       margin: 0 auto;
-    }
- }
- @media(max-width:750px){
-    .infoBox .infoHeading{
-        font-size: 1.1rem;
-    }
-    .addressBox{
-        margin: 15px;
-        margin-top: 25px;
-        width: 30%;
-        display: inline-block;
-    }
-    .addressBox .addressHeading{
-        margin-bottom: 8px;
-        font-size: 1.1rem;
-    }
-    .addressBox .addy{
-        line-height: 25px;
-    }
-    .infoButton{
-        width: 250px;
-    }
- }
- @media(max-width:650px){
-    .accountBody{
-        position: relative;
-        margin-top: 30px;
-        width: 100%;
-        display: block;
-    }
-    .infoBox{ 
-        position: relative;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        width: 90%;
-        margin: 0 auto;
-        display: block;
-        height: auto;
-    }
-    .infoButton{
-        margin-left: 15px;
-        width: 200px;
-     }
-     .ordersBox{
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        width: 90%;
-        display: block;
-        margin: 50px auto;
-        height: 600px;
-        padding: 20px;
-        background-color: rgb(243, 240, 240);
-    }
- }
-
-
- /* CSS for Personal Info container */
- .personalInfoBody{
-     width: 70%;
-     margin: 50px auto;
-     padding: 20px;
- }
- .personalInfoBody h3{
-     margin-bottom: 40px;
-     font-size: 2.5rem;
-     font-weight: 400;
- }
-.userRow{
-    width: 100%;
-    border-bottom: 1px solid #918f8f;
-}
-.userRow .userFieldBox{
-    height: 50px;
-    width: 40%;
-    display: inline-block;
-    margin: 10px 10px 10px 0;
-}
-.userRow .userFieldBox span{
-    display: block;
-}
-.userRow .userFieldBox span:first-child{
-   font-size: 1.3rem;
-   font-weight: 800;
-   color: rgb(13, 14, 14);
-}
-.userRow .userFieldBox span:nth-child(2){
-    font-size: 1.2rem;
-    color: #949494;
-    font-weight: 500;
- }
-
-.userRow .editUserInfo{
-    display: inline-block;
-    width: 40%;
-    margin: 10px 10px 40px 0;
-}
-.userRow .editUserInfo a{
-    color: #949494;
-}
-.userRow .changeUserPass a{
-    color: #949494;
-}
-.defaultInfoInner{
-    width: 100%;
-}
-#editInfo{
-    width: 100%;
-    display: none;
-}
-#changePasswordDiv{
-    width: 100%;
-    display: none;
-}
-.changePasswordContainer{
-    width: 100%;
-}
- .editPersonalInfo{
-    width: 100%;
-}
-.editUserInfoBTN{
-    border: none;
-    background-color: transparent;
-    font-size: 1rem;
-    color: #949494;
-    text-decoration: underline;
-}
-.editPersonalInfo .nameFields{
+    z-index: 1;
+    height: 100px;
+    background-color: white;
+  }
+  .hiddenSummary .hiddenTotal {
     display: flex;
     justify-content: space-between;
-}
-.nameFields .nameContainer{
-    width: 48%;
-}
-.editPersonalInfo label,.changePasswordContainer label{
-    font-size: 1.2rem;
-    color: #918f8f;
-}
-.editPersonalInfo input[type=text],input[type=email]{
-    width: 100%;
-    font-size: 1.2rem;
-    border: none;
-    border-bottom: 1px solid #949494;
-    padding-left: 20px;
-}
-.changePasswordContainer input[type=password]{
-    width: 100%;
-    font-size: 1.2rem;
-    border: none;
-    border-bottom: 1px solid #949494;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-.editPersonalInfo input:focus{
-    outline: none;
-}
-.emailField{
-    margin-top: 30px;
-}
-.infoFunctionField{
-    margin: 20px 0 50px;
-    display: flex;
-    justify-content: space-between;
-    width: 60%;
-}
-.infoFunctionField .containers{
-    width: 48%;
-}
-.infoFunctionField .containers button{
+    align-items: center;
+  }
+  .hiddenSummary .hiddenTotal div:first-child {
+    font-weight: 600;
+  }
+  .hiddenSummary .hiddenButton {
+    margin-top: 10px;
+  }
+  .hiddenSummary .hiddenButton button {
     width: 100%;
     height: 40px;
     background-color: #111;
     color: #cfcccc;
+    text-transform: uppercase;
+  }
+  .row .checkoutBTN {
+    display: none;
+  }
+  .cartContainerHeader .cartHeader h3 {
+    font-size: 1.8rem;
+  }
+  .cartContainerHeader .continueShoppingContainer a {
+    font-size: 1rem;
+    color: #575757;
+  }
+}
+@media (max-width: 500px) {
+  .cartContainerHeader .cartHeader h3 {
+    font-size: 1.5rem;
+  }
+  .cartContainerHeader .continueShoppingContainer a {
+    font-size: 1rem;
+    color: #575757;
+  }
 }
 
+/* Css for Account Page */
+.bottomNav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.bottomNavHeader {
+  color: white;
+  margin-left: 30px;
+  font-size: 1rem;
+}
+.bottomNavLinks {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bottomNavLinks ul {
+  list-style: none;
+}
+.bottomNavLinks ul li {
+  display: inline-block;
+  padding: 0 30px;
+}
+.bottomNavLinks ul li a {
+  /* text-decoration: none; */
+  font-size: 1.1rem;
+  color: #918f8f;
+}
+.BNL {
+  color: white;
+}
+.bottomNavLinks a:link {
+  text-decoration: none;
+}
+.bottomNavLinks a:visited {
+  text-decoration: none;
+}
+.bottomNavLinks a:hover {
+  color: #202020;
+}
+.bottomNavLinks a:active {
+  color: #111;
+  font-size: 2.3rem;
+}
+@media (max-width: 750px) {
+  .bottomNav {
+    background-color: black;
+    height: 40px;
+    position: relative;
+  }
+  .bottomNavHeader {
+    font-size: 1rem;
+  }
+  #bottomNavi {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    z-index: 9999;
+    background-color: #918f8f;
+  }
+  .bottomNavLinks ul {
+    width: 100%;
+  }
+  .bottomNavLinks ul li {
+    display: block;
+    height: 50px;
+    border-bottom: 1px solid #d6d4d4;
+  }
+  .bottomNavLinks ul li:first-child {
+    background-color: #dfdddd;
+    font-weight: 600;
+  }
+  .bottomNavLinks ul li a {
+    width: 100%;
+    line-height: 50px;
+    font-size: 1.2rem;
+    color: #111111;
+  }
+}
 
+/* CSS for my Account */
+.accountBody {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/* add hover for two boxes */
+.infoBox {
+  position: relative;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  vertical-align: top;
+  width: 45%;
+  height: 600px;
+  padding: 20px;
+  background-color: rgb(243, 240, 240);
+}
+.infoBox:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  border: 0.5px solid rgb(233, 232, 232);
+}
+.infoBox .infoHeading {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.addressBox {
+  margin: 20px;
+  margin-top: 30px;
+  width: 30%;
+  display: inline-block;
+}
+.addressBox .addressHeading {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #111;
+  font-weight: 500;
+}
+.addressBox .addy {
+  line-height: 30px;
+  color: #000000;
+  font-weight: 400;
+}
+.infoButton {
+  position: relative;
+  bottom: 0;
+  margin-left: 20px;
+  display: block;
+  width: 300px;
+  height: 40px;
+  border: 2px solid black;
+  font-size: 1rem;
+  background-color: transparent;
+  color: black;
+}
+.infoButton:hover {
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+}
+.ordersBox {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  vertical-align: top;
+  width: 45%;
+  height: 600px;
+  padding: 20px;
+  background-color: rgb(243, 240, 240);
+}
+.ordersBox:hover {
+  transform: scale(1.075);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  border: 0.5px solid rgb(233, 232, 232);
+}
+.ordersBox .ordersHeading {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.ordersBox .ordersTable {
+  width: 100%;
+  margin: 30px auto;
+}
+
+.ordersTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ordersTable td,
+th {
+  border: 1px solid black;
+}
+.ordersTable tr:first-child {
+  height: 30px;
+}
+.ordersTable tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.ordersTable td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+/* Media Query for My Account */
+@media (max-width: 800px) {
+  .infoButton {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 750px) {
+  .infoBox .infoHeading {
+    font-size: 1.1rem;
+  }
+  .addressBox {
+    margin: 15px;
+    margin-top: 25px;
+    width: 30%;
+    display: inline-block;
+  }
+  .addressBox .addressHeading {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+  }
+  .addressBox .addy {
+    line-height: 25px;
+  }
+  .infoButton {
+    width: 250px;
+  }
+}
+@media (max-width: 650px) {
+  .accountBody {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    display: block;
+  }
+  .infoBox {
+    position: relative;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+  }
+  .infoButton {
+    margin-left: 15px;
+    width: 200px;
+  }
+  .ordersBox {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 90%;
+    display: block;
+    margin: 50px auto;
+    height: 600px;
+    padding: 20px;
+    background-color: rgb(243, 240, 240);
+  }
+}
+
+/* CSS for Personal Info container */
+.personalInfoBody {
+  width: 70%;
+  margin: 50px auto;
+  padding: 20px;
+}
+.personalInfoBody h3 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+.userRow {
+  width: 100%;
+  border-bottom: 1px solid #918f8f;
+}
+.userRow .userFieldBox {
+  height: 50px;
+  width: 40%;
+  display: inline-block;
+  margin: 10px 10px 10px 0;
+}
+.userRow .userFieldBox span {
+  display: block;
+}
+.userRow .userFieldBox span:first-child {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: rgb(13, 14, 14);
+}
+.userRow .userFieldBox span:nth-child(2) {
+  font-size: 1.2rem;
+  color: #949494;
+  font-weight: 500;
+}
+
+.userRow .editUserInfo {
+  display: inline-block;
+  width: 40%;
+  margin: 10px 10px 40px 0;
+}
+.userRow .editUserInfo a {
+  color: #949494;
+}
+.userRow .changeUserPass a {
+  color: #949494;
+}
+.defaultInfoInner {
+  width: 100%;
+}
+#editInfo {
+  width: 100%;
+  display: none;
+}
+#changePasswordDiv {
+  width: 100%;
+  display: none;
+}
+.changePasswordContainer {
+  width: 100%;
+}
+.editPersonalInfo {
+  width: 100%;
+}
+.editUserInfoBTN {
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #949494;
+  text-decoration: underline;
+}
+.editPersonalInfo .nameFields {
+  display: flex;
+  justify-content: space-between;
+}
+.nameFields .nameContainer {
+  width: 48%;
+}
+.editPersonalInfo label,
+.changePasswordContainer label {
+  font-size: 1.2rem;
+  color: #918f8f;
+}
+.editPersonalInfo input[type="text"],
+input[type="email"] {
+  width: 100%;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #949494;
+  padding-left: 20px;
+}
+.changePasswordContainer input[type="password"] {
+  width: 100%;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #949494;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+.editPersonalInfo input:focus {
+  outline: none;
+}
+.emailField {
+  margin-top: 30px;
+}
+.infoFunctionField {
+  margin: 20px 0 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+.infoFunctionField .containers {
+  width: 48%;
+}
+.infoFunctionField .containers button {
+  width: 100%;
+  height: 40px;
+  background-color: #111;
+  color: #cfcccc;
+}
 
 /* CSS for Personal Info Address Container */
-.addressHeader{
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+.addressHeader {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
 }
-.addressHeader h3{
-    width: 50%;
+.addressHeader h3 {
+  width: 50%;
+  height: 50px;
+  margin-bottom: 0px !important;
+}
+.addressHeader button {
+  width: 30%;
+  height: 50px;
+  border: 1px solid black;
+  background-color: transparent;
+  font-size: 20px;
+}
+.addressHeader button:hover {
+  height: 50px;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+.addressRow {
+  width: 100%;
+  border-bottom: 1px solid #918f8f;
+  padding-bottom: 50px;
+}
+.paymentRow {
+  width: 100%;
+  border-bottom: 1px solid #918f8f;
+  padding-bottom: 50px;
+}
+
+.newDIV {
+  width: 100%;
+}
+.addressRow:last-child {
+  border: none;
+}
+.paymentRow:last-child {
+  border: none;
+}
+
+.addressRow .addressBoxMain {
+  width: 100%;
+  margin-top: 50px;
+}
+.addressRow .addressBoxMain h5 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.addressDetails {
+  display: inline-block;
+  margin: 0 15% 5% 0;
+}
+.addressDetails p {
+  font-size: 1.2rem;
+  color: #949494;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.addressDetails p:first-child {
+  font-size: 1.2rem;
+  color: #202020;
+  font-weight: 500;
+}
+.paymentRow .paymentBoxMain {
+  width: 100%;
+  margin-top: 50px;
+}
+.paymentRow .paymentBoxMain h5 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.paymentDetails {
+  display: inline-block;
+  margin: 0 15% 5% 0;
+}
+.paymentDetails p {
+  font-size: 1.2rem;
+  color: #949494;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.paymentDetails p:first-child {
+  font-size: 1.2rem;
+  color: #202020;
+  font-weight: 500;
+}
+
+/* css for add address form */
+#addAddressDiv {
+  width: 100%;
+  display: none;
+}
+.addAddressContainer {
+  width: 100%;
+}
+.addAddressContainer label {
+  font-size: 1.2rem;
+  color: #918f8f;
+}
+.addAddressContainer .addressUserNameFields,
+.cityAPTField,
+.stateZipField,
+.cardUserNameField {
+  display: flex;
+  justify-content: space-between;
+}
+.addressUserNameFields .addressUserNameContainer,
+.cityAPTField .cityContainer,
+.stateZipField .stateContainer,
+.cardUserNameField .cardUserNameContainer {
+  width: 48%;
+}
+#editAddressDiv {
+  width: 100%;
+  display: none;
+}
+.addCardContainer label {
+  font-size: 1.2rem;
+  color: #918f8f;
+}
+.addAddressContainer input[type="text"] {
+  width: 100%;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #949494;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  height: 40px;
+}
+.addCardContainer input[type="text"] {
+  width: 100%;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 1px solid #949494;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  height: 40px;
+}
+.editAddressBTN {
+  margin-top: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  color: #949494;
+  text-decoration: underline;
+  display: block;
+}
+#addPayment {
+  width: 100%;
+  display: none;
+}
+.addCardContainer {
+  width: 100%;
+}
+.addressBoxMain a {
+  color: #918f8f;
+}
+
+@media (max-width: 1000px) {
+  .addressHeader h3 {
+    width: 70%;
     height: 50px;
     margin-bottom: 0px !important;
-}
-.addressHeader button{
+  }
+  .addressHeader button {
     width: 30%;
     height: 50px;
     border: 1px solid black;
     background-color: transparent;
     font-size: 20px;
+  }
 }
-.addressHeader button:hover{
+@media (max-width: 750px) {
+  .personalInfoBody {
+    width: 90%;
+  }
+  .userRow .userFieldBox span:first-child {
+    font-size: 1.1rem;
+  }
+  .userRow .userFieldBox span:nth-child(2) {
+    font-size: 1rem;
+  }
+  .addressRow .addressBoxMain {
+    display: block;
+  }
+  .paymentRow .paymentBoxMain {
+    display: block;
+  }
+  .addressHeader h3 {
+    width: 80%;
+    height: 50px;
+    margin-bottom: 0px !important;
+  }
+  .addressHeader button {
+    width: 20%;
     height: 50px;
     border: 1px solid black;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-}
-.addressRow{
-    width: 100%;
-    border-bottom: 1px solid #918f8f;
-    padding-bottom: 50px;
-}
-.paymentRow{
-    width: 100%;
-    border-bottom: 1px solid #918f8f;
-    padding-bottom: 50px;
-}
-
-.newDIV{
-    width: 100%;
-}
-.addressRow:last-child{
-    border: none;
-}
-.paymentRow:last-child{
-    border: none;
-}
-
-.addressRow .addressBoxMain{
-    width: 100%;
-    margin-top: 50px;
-}
-.addressRow .addressBoxMain h5{
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-.addressDetails{
-    display: inline-block;
-    margin: 0 15% 5% 0;
-}
-.addressDetails p{
-    font-size: 1.2rem;
-    color: #949494;;
-    font-weight: 500;
-    margin: 5px 0;
-}
-.addressDetails p:first-child{
-    font-size: 1.2rem;
-    color: #202020;;
-    font-weight: 500;
-}
-.paymentRow .paymentBoxMain{
-    width: 100%;
-    margin-top: 50px;
-}
-.paymentRow .paymentBoxMain h5{
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-.paymentDetails{
-    display: inline-block;
-    margin: 0 15% 5% 0;
-}
-.paymentDetails p{
-    font-size: 1.2rem;
-    color: #949494;;
-    font-weight: 500;
-    margin: 5px 0;
-}
-.paymentDetails p:first-child{
-    font-size: 1.2rem;
-    color: #202020;;
-    font-weight: 500;
-}
-
-
-/* css for add address form */
-#addAddressDiv{
-    width: 100%;
-    display: none;
-}
-.addAddressContainer{
-    width: 100%;
-}
-.addAddressContainer label{
-    font-size: 1.2rem;
-    color: #918f8f;
-}
-.addAddressContainer .addressUserNameFields,.cityAPTField,.stateZipField,.cardUserNameField{
-    display: flex;
-    justify-content: space-between;
-}
-.addressUserNameFields .addressUserNameContainer,.cityAPTField .cityContainer,.stateZipField .stateContainer,.cardUserNameField .cardUserNameContainer{
-    width: 48%;
-}
-#editAddressDiv{
-    width: 100%;
-    display: none;
-}
-.addCardContainer label{
-    font-size: 1.2rem;
-    color: #918f8f;
-}
-.addAddressContainer input[type=text]{
-    width: 100%;
-    font-size: 1.2rem;
-    border: none;
-    border-bottom: 1px solid #949494;
-    padding-left: 20px;
-    margin-bottom: 30px;
-    height: 40px;
-}
-.addCardContainer input[type=text]{
-    width: 100%;
-    font-size: 1.2rem;
-    border: none;
-    border-bottom: 1px solid #949494;
-    padding-left: 20px;
-    margin-bottom: 30px;
-    height: 40px;
-}
-.editAddressBTN{
-    margin-top: 10px;
-    border: none;
     background-color: transparent;
-    font-size: 1rem;
-    color: #949494;
-    text-decoration: underline;
+    font-size: 20px;
+  }
+}
+@media (max-width: 550px) {
+  .personalInfoBody h3 {
+    font-size: 1.8rem;
+  }
+  .userRow .userFieldBox {
     display: block;
-}
-#addPayment{
-    width: 100%;
-    display: none;
-}
-.addCardContainer{
-    width: 100%;
-}
-.addressBoxMain a{
-    color: #918f8f;
-}
-
-@media(max-width:1000px){
-    .addressHeader h3{
-        width: 70%;
-        height: 50px;
-        margin-bottom: 0px !important;
-    }
-    .addressHeader button{
-        width: 30%;
-        height: 50px;
-        border: 1px solid black;
-        background-color: transparent;
-        font-size: 20px;
-    }
-}
-@media(max-width: 750px){
-    .personalInfoBody{
-        width: 90%;
-    }
-    .userRow .userFieldBox span:first-child{
-        font-size: 1.1rem;
-     }
-     .userRow .userFieldBox span:nth-child(2){
-        font-size: 1rem;
-     }
-     .addressRow .addressBoxMain{
-         display: block;
-     }
-     .paymentRow .paymentBoxMain{
-        display: block;
-    }
-     .addressHeader h3{
-        width: 80%;
-        height: 50px;
-        margin-bottom: 0px !important;
-    }
-    .addressHeader button{
-        width: 20%;
-        height: 50px;
-        border: 1px solid black;
-        background-color: transparent;
-        font-size: 20px;
-    }
-}
-@media(max-width: 550px){
-    .personalInfoBody h3{
-        font-size: 1.8rem;
-    }
-    .userRow .userFieldBox{
-        display: block;
-    }
-    .userRow .editUserInfo{
-        display: inline-block;
-        width: fit-content;
-        margin: 10px 30px 40px 0;
-    }
-    .addressHeader h3{
-        width: 80%;
-        height: 50px;
-        margin-bottom: 0px !important;
-    }
-    .addressHeader{
-        margin-top: 50px;
-        display: block;
-    }
-    .addressHeader button{
-        width: 80%;
-        height: 50px;
-        border: 1px solid black;
-        background-color: transparent;
-        font-size: 20px;
-    }
-}
-.myOrderBody{
+  }
+  .userRow .editUserInfo {
+    display: inline-block;
+    width: fit-content;
+    margin: 10px 30px 40px 0;
+  }
+  .addressHeader h3 {
     width: 80%;
-    margin: 60px auto;
-    padding: 20px;
+    height: 50px;
+    margin-bottom: 0px !important;
+  }
+  .addressHeader {
+    margin-top: 50px;
+    display: block;
+  }
+  .addressHeader button {
+    width: 80%;
+    height: 50px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 20px;
+  }
 }
-.myOrderBody .myOrderBodyHeader{
-    margin-bottom: 50px;
+.myOrderBody {
+  width: 80%;
+  margin: 60px auto;
+  padding: 20px;
 }
-.myOrderBody .myOrderBodyHeader h3{
-    font-size: 2.9rem;
-    font-weight: 400;
+.myOrderBody .myOrderBodyHeader {
+  margin-bottom: 50px;
 }
-.myOrderContainer{
-    margin-top: 40px;
+.myOrderBody .myOrderBodyHeader h3 {
+  font-size: 2.9rem;
+  font-weight: 400;
 }
-.myOrderContainer .orderPlaceHeading{
-    background-color: #ebe9e9;
-    height: 40px;
+.myOrderContainer {
+  margin-top: 40px;
 }
-.myOrderContainer .orderPlaceHeading span{
-    line-height: 40px;
-    font-size: 1.2rem;
+.myOrderContainer .orderPlaceHeading {
+  background-color: #ebe9e9;
+  height: 40px;
 }
-.myOrderContainer .orderPlaceHeading span:first-child{
-    padding-left: 20px;
+.myOrderContainer .orderPlaceHeading span {
+  line-height: 40px;
+  font-size: 1.2rem;
+}
+.myOrderContainer .orderPlaceHeading span:first-child {
+  padding-left: 20px;
+  font-weight: 800;
+}
+.myOrderContainer .orderDetailContainer {
+  padding-left: 20px;
+  margin-top: 20px;
+}
+.myOrderContainer .orderDetailContainer .row {
+  display: inline-block;
+  width: 33%;
+}
+.myOrderContainer .orderDetailContainer .row:last-child {
+  vertical-align: top;
+}
+.orderNumberDetails {
+  padding-bottom: 20px;
+}
+.row p {
+  line-height: 24px;
+  font-size: 1.1rem;
+}
+.row .title {
+  font-weight: 800;
+}
+@media (max-width: 1200px) {
+  .myOrderBody {
+    width: 90%;
+  }
+  .myOrderContainer .orderDetailContainer .row {
+    display: inline-block;
+    width: 25%;
+  }
+}
+@media (max-width: 750px) {
+  .myOrderBody {
+    width: 98%;
+  }
+  .myOrderContainer .orderPlaceHeading {
+    height: 60px;
+    text-align: center;
+  }
+  .myOrderContainer .orderPlaceHeading span {
+    line-height: 60px;
+  }
+  .myOrderContainer .orderPlaceHeading span:first-child {
     font-weight: 800;
-}
-.myOrderContainer .orderDetailContainer{
-    padding-left: 20px;
+  }
+  .orderNumberDetails p,
+  .orderTotalDetails p {
+    display: inline-block;
+  }
+  .myOrderContainer .orderDetailContainer .row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 100%;
+  }
+  .myOrderContainer .orderDetailContainer .row:last-child() {
     margin-top: 20px;
-}
-.myOrderContainer .orderDetailContainer .row{
-   display: inline-block;
-   width: 33%;
-}
-.myOrderContainer .orderDetailContainer .row:last-child{
-    vertical-align: top;
- }
-.orderNumberDetails{
-    padding-bottom: 20px;
-}
-.row p{
-    line-height: 24px;
-    font-size: 1.1rem;
-}
-.row .title{
-    font-weight: 800;
-}
-@media(max-width: 1200px){
-    .myOrderBody{
-        width: 90%;
-    }
-    .myOrderContainer .orderDetailContainer .row{
-        display: inline-block;
-        width: 25%;
-     }
-}
-@media(max-width: 750px){
-    .myOrderBody{
-        width: 98%;
-    }
-     .myOrderContainer .orderPlaceHeading{
-        height: 60px;
-        text-align: center;
-    }
-    .myOrderContainer .orderPlaceHeading span{
-        line-height: 60px;
-    }
-    .myOrderContainer .orderPlaceHeading span:first-child{
-        font-weight: 800;
-    }
-    .orderNumberDetails p,.orderTotalDetails p{
-        display: inline-block;
-    }
-    .myOrderContainer .orderDetailContainer .row{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: inline-block;
-        width: 100%;
-     }
-     .myOrderContainer .orderDetailContainer .row:last-child(){
-        margin-top: 20px;
-     }
-     .myOrderContainer .orderDetailContainer{
-        padding-left: 20px;
-    }
+  }
+  .myOrderContainer .orderDetailContainer {
+    padding-left: 20px;
+  }
 }
 
 /* checkout html css */
-.checkoutNav{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0 10px;
-    height: 80px;
-    border-bottom: 1px solid #000000;
+.checkoutNav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+  height: 80px;
+  border-bottom: 1px solid #000000;
 }
-.checkoutNav .backout{
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    float: left;
+.checkoutNav .backout {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  float: left;
 }
-.checkoutNav .backout a{
-   text-decoration: none;
+.checkoutNav .backout a {
+  text-decoration: none;
 }
 
-.checkoutNav .backout i{
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: normal;
-    font-style: normal;
+.checkoutNav .backout i {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
 }
-.checkoutNav .backout i::before{
-    font-size: 10px;
-    vertical-align: middle;
-    font-weight: 800;
+.checkoutNav .backout i::before {
+  font-size: 10px;
+  vertical-align: middle;
+  font-weight: 800;
 }
-.navMain{
-    width: 90%;
-    display: flex;
-    justify-content: center;
+.navMain {
+  width: 90%;
+  display: flex;
+  justify-content: center;
 }
-.navMain p{
-    font-size: 2.2rem;
+.navMain p {
+  font-size: 2.2rem;
 }
-.checkoutBody{
-    width: 74%;
-    margin: 50px auto;
-    display: flex;
-    justify-content: space-between;
+.checkoutBody {
+  width: 74%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
 }
-.checkoutBody .checkoutSteps{
-    width: 48%;
-    display: inline-block;
+.checkoutBody .checkoutSteps {
+  width: 48%;
+  display: inline-block;
 }
-.checkoutSteps .row{
-    border-bottom: 1px solid black;
-    padding: 20px 0;
+.checkoutSteps .row {
+  border-bottom: 1px solid black;
+  padding: 20px 0;
 }
-.infoStepBox .stepHeading{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.infoStepBox .stepHeading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.infoStepBox .stepHeading .step{
-    font-size: 1.6rem;
-    font-weight: 500;
+.infoStepBox .stepHeading .step {
+  font-size: 1.6rem;
+  font-weight: 500;
 }
-.pickAddressLabel{
-    display: flex;
-    position: absolute;
-    padding-left: 10px;
-    font-size: 12px;
-    z-index: 1;
-    top: 1;
+.pickAddressLabel {
+  display: flex;
+  position: absolute;
+  padding-left: 10px;
+  font-size: 12px;
+  z-index: 1;
+  top: 1;
 }
-.selectContainer{
-    width: 100%;
+.selectContainer {
+  width: 100%;
 }
-.infoStepBox .shippingInfo select{
-    width: 100%;
-    padding: 15px 0 0 5px;
-    height: 45px;
-    font-size: 1.1rem;
+.infoStepBox .shippingInfo select {
+  width: 100%;
+  padding: 15px 0 0 5px;
+  height: 45px;
+  font-size: 1.1rem;
 }
 /* .shippingInfoFunctions{
     margin: 20px 0 30px;
@@ -1794,363 +1781,356 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 600;
     text-transform: uppercase;
 } */
-.shippingInfoFunctions .shippingInfoBTN:hover{
-    background-color: black;
-    color: white;
-    cursor: pointer;
+.shippingInfoFunctions .shippingInfoBTN:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
-.nextBTN{
-    width: 100%;
-    height: 45px;
-    margin-bottom: 20px;
-    font-size: .9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    background-color: black;
-    color: white;
+.nextBTN {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
 }
 
-#addShippingInfo{
-    display: none;
+#addShippingInfo {
+  display: none;
 }
-#updateShippingInfo{
-    display: none;
+#updateShippingInfo {
+  display: none;
 }
-#finalShippingInfo{
-    display: none;
+#finalShippingInfo {
+  display: none;
 }
-.mainInfo p{
-    font-size: 1rem;
+.mainInfo p {
+  font-size: 1rem;
 }
-.methodForm .methodContainers{
+.methodForm .methodContainers {
   margin: 15px 0;
 }
 
-.addPaymentBTN{
-    width: 100%;
-    height: 45px;
-    background-color: white;
-    color: black;
-    border: 1px solid rgb(128, 128, 128);
+.addPaymentBTN {
+  width: 100%;
+  height: 45px;
+  background-color: white;
+  color: black;
+  border: 1px solid rgb(128, 128, 128);
 }
-.paymentContainer{
-    background-color: #e2e2e2;
-    padding: 20px;
-    border: 1px solid rgb(155, 155, 155);
-    margin-bottom: 15px;
+.paymentContainer {
+  background-color: #e2e2e2;
+  padding: 20px;
+  border: 1px solid rgb(155, 155, 155);
+  margin-bottom: 15px;
 }
-.paymentContainerHeading{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.paymentContainerHeading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
-.paymentContainerHeading label{
-   padding-left: 15px;
+.paymentContainerHeading label {
+  padding-left: 15px;
 }
-.cardInfoContainer{
-    display: flex;
-    justify-content: space-between;
+.cardInfoContainer {
+  display: flex;
+  justify-content: space-between;
 }
-.cardInfoContainerInner{
-   width: 31%;
+.cardInfoContainerInner {
+  width: 31%;
 }
-.cardInfoContainer input{
-    width: 100%;
-    height: 30px;
-    border: none;
-    padding-left: 15px;
+.cardInfoContainer input {
+  width: 100%;
+  height: 30px;
+  border: none;
+  padding-left: 15px;
 }
-.cardInfoContainer label{
-    font-size: .8rem;
-}
-
-
-.addCardBox input{
-    height: 45px;
-    padding-left: 10px;
-    font-size: 1.2rem;
-}
-.cardMaxBox{
-    margin-bottom: 20px;
-}
-.cardMaxBox input{  
-   width: 100%;
-}
-.cardNameBox{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-.cardNameBox div{
-    width: 48%;
-}
-.cardNameBox input{
-    width: 100%;
-}
-.cardInfoBox{
-    display: flex;
-    justify-content: space-between;
-}
-.cardInfoBoxInner{
-   width: 30%;
-}
-.cardInfoBoxInner input{
-   width: 100%;
-}
-.cardFunctions{
-    margin: 30px 0 20px 0;
-    display: flex;
-    align-items: center;
-}
-.cardFunctions label{
-    padding: 10px;
-}
-.pickOne{
-    display: flex;
-    align-items: center;
-}
-.pickOne label{
-    padding-left: 15px;
-}
-.billingForm button{
-    margin-top: 30px;
-}
-.row:last-child{
-    border: none;
-}
-.placeOrderBTN{
-    width: 100%;
-    height: 45px;
-    margin-bottom: 20px;
-    font-size: .9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    background-color: black;
-    color: white;
-}
-#billingForm{
-    display: none;
-}
-.checkoutBody .orderSummary{
-    width: 40%;
-    vertical-align: top;
-
+.cardInfoContainer label {
+  font-size: 0.8rem;
 }
 
-.orderSummaryInner{
-    width: 100%;
-    margin-bottom: 30px;
+.addCardBox input {
+  height: 45px;
+  padding-left: 10px;
+  font-size: 1.2rem;
 }
-.orderSummaryInner:nth-child(3){
-    border-top: 1px solid #575757;
-    padding-top: 35px;
+.cardMaxBox {
+  margin-bottom: 20px;
 }
-.orderSummaryInner:nth-child(3) .row{
-    border-bottom: 1px solid #575757;
-    padding: 0 0 20px 0;
+.cardMaxBox input {
+  width: 100%;
 }
-.orderSummaryInner .shoppingBagHeader p{
+.cardNameBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.cardNameBox div {
+  width: 48%;
+}
+.cardNameBox input {
+  width: 100%;
+}
+.cardInfoBox {
+  display: flex;
+  justify-content: space-between;
+}
+.cardInfoBoxInner {
+  width: 30%;
+}
+.cardInfoBoxInner input {
+  width: 100%;
+}
+.cardFunctions {
+  margin: 30px 0 20px 0;
+  display: flex;
+  align-items: center;
+}
+.cardFunctions label {
+  padding: 10px;
+}
+.pickOne {
+  display: flex;
+  align-items: center;
+}
+.pickOne label {
+  padding-left: 15px;
+}
+.billingForm button {
+  margin-top: 30px;
+}
+.row:last-child {
+  border: none;
+}
+.placeOrderBTN {
+  width: 100%;
+  height: 45px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+}
+#billingForm {
+  display: none;
+}
+.checkoutBody .orderSummary {
+  width: 40%;
+  vertical-align: top;
+}
+
+.orderSummaryInner {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.orderSummaryInner:nth-child(3) {
+  border-top: 1px solid #575757;
+  padding-top: 35px;
+}
+.orderSummaryInner:nth-child(3) .row {
+  border-bottom: 1px solid #575757;
+  padding: 0 0 20px 0;
+}
+.orderSummaryInner .shoppingBagHeader p {
   font-size: 1.2rem;
   font-weight: 800;
 }
-.row .merchImg{
-    width: 30%;
-    display: inline-block;
+.row .merchImg {
+  width: 30%;
+  display: inline-block;
 }
-.row .merchImg img{
-    width: 100%;
+.row .merchImg img {
+  width: 100%;
 }
-.bagContent{
+.bagContent {
   display: inline-block;
   width: 60%;
 }
-.bagContent .bagName{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
+.bagContent .bagName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
 }
-.bagName p{
-    font-size: 1.1rem;
-    font-weight: 600;
+.bagName p {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
-.bagContent .bagInfo{
-    margin-bottom: 20px;
+.bagContent .bagInfo {
+  margin-bottom: 20px;
 }
-.bagInfo p{
-    font-size: .9rem;
+.bagInfo p {
+  font-size: 0.9rem;
 }
-.bagContent a{
-    text-decoration: none;
-    text-transform: uppercase;
-    list-style: none;
-    color: #575757;
+.bagContent a {
+  text-decoration: none;
+  text-transform: uppercase;
+  list-style: none;
+  color: #575757;
 }
-.sumHeading{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#toggleOrderSummary{
-    display: none;
-}
-.sumHeading .orderSummaryHeading{
-    margin-bottom: 0 !important;
+.sumHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+#toggleOrderSummary {
+  display: none;
+}
+.sumHeading .orderSummaryHeading {
+  margin-bottom: 0 !important;
+}
 
 /* media query for checkout page */
-@media(max-width: 1000px){
-    .checkoutBody{
-        width: 95%;
-    }
+@media (max-width: 1000px) {
+  .checkoutBody {
+    width: 95%;
+  }
 }
-@media(max-width: 780px){
-    .addCardBox input{
-        font-size: .8rem;
-    }
+@media (max-width: 780px) {
+  .addCardBox input {
+    font-size: 0.8rem;
+  }
 }
-@media(max-width: 750px){
-    .infoStepBox .stepHeading .step{
-        font-size: 1.4rem;
-        font-weight: 500;
-    }
-    .cardInfoContainer .cardInfoContainerInner label{
-        font-size: .6rem;
-    }
-    .checkoutNav{
-        padding: 0 5px;
-    }
-    .navMain{
-        width: 80%;
-        display: flex;
-        justify-content: center;
-    }
-    .navMain p{
-        font-size: 1.8rem;
-    }
-}
-@media(max-width: 600px){
-    .checkoutBody{
-        display: block;
-    }
-    .checkoutBody .checkoutSteps{
-        display: block;
-        width: 100%;
-    }
-    .checkoutBody .orderSummary{
-        display: block;
-    }
-    .infoStepBox .stepHeading .step{
-        font-size: 1.6rem;
-    }
-    .checkoutBody .orderSummary{
-        display: block;
-        width: 100%;
-    }
-    .bagName p{
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-    .bagInfo p{
-        font-size: 1rem;
-    }
-    #toggleOrderSummary{
-        display: block;
-        border: none;
-        cursor: pointer;
-    }
-    #mobileSummary{
-
-        display: none;
-    }
-}
-.logInNav{
+@media (max-width: 750px) {
+  .infoStepBox .stepHeading .step {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+  .cardInfoContainer .cardInfoContainerInner label {
+    font-size: 0.6rem;
+  }
+  .checkoutNav {
+    padding: 0 5px;
+  }
+  .navMain {
+    width: 80%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #575757;
+  }
+  .navMain p {
+    font-size: 1.8rem;
+  }
 }
-.logInBody{
+@media (max-width: 600px) {
+  .checkoutBody {
+    display: block;
+  }
+  .checkoutBody .checkoutSteps {
+    display: block;
+    width: 100%;
+  }
+  .checkoutBody .orderSummary {
+    display: block;
+  }
+  .infoStepBox .stepHeading .step {
+    font-size: 1.6rem;
+  }
+  .checkoutBody .orderSummary {
+    display: block;
+    width: 100%;
+  }
+  .bagName p {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .bagInfo p {
+    font-size: 1rem;
+  }
+  #toggleOrderSummary {
+    display: block;
+    border: none;
+    cursor: pointer;
+  }
+  #mobileSummary {
+    display: none;
+  }
+}
+.logInNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #575757;
+}
+.logInBody {
   width: 40%;
   margin: 10% auto;
 }
-.logInBodyContainer h2{
-    font-family: Arial, Helvetica, sans-serif;
+.logInBodyContainer h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+.logInBody input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #d8d7d7;
+  width: 100%;
+  padding-left: 20px !important;
+  margin-bottom: 30px;
+  height: 40px;
+  font-size: 1.2rem;
+}
+.logInBTN {
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+  background-color: #000000;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.registerLine {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#registerButton {
+  border: none;
+  text-decoration: underline;
+  background-color: transparent;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.twoCol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.col {
+  width: 48%;
+}
+
+.logInBody label {
+  color: #918f8f;
+}
+.logInnavMain p {
+  font-size: 2.5rem;
+}
+#registerForm {
+  display: none;
+}
+@media (max-width: 900px) {
+  .logInnavMain p {
     font-size: 2rem;
-    margin-bottom: 40px;
+  }
+  .logInBody {
+    width: 98%;
+  }
+  .logInBodyContainer h2 {
+    font-size: 1.5rem;
+  }
 }
-.logInBody input[type="text"]{ 
-   border: none;
-   border-bottom: 1px solid #d8d7d7;
-   width: 100%;
-   padding-left: 20px !important;
-   margin-bottom: 30px;
-   height: 40px;
-   font-size: 1.2rem;
+@media (max-width: 450px) {
+  .logInBodyContainer h2 {
+    font-size: 1.2rem;
+  }
 }
-.logInBTN{
-    margin-top: 20px;
-    width: 100%;
-    height: 50px;
-    background-color: #000000;
-    color: white;
-    font-size: .9rem;
-    text-transform: uppercase;
-}
-.registerLine{
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#registerButton{
-    border: none;
-    text-decoration: underline;
-    background-color: transparent;
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-
-.twoCol{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.col{
-    width: 48%;
-}
-
-.logInBody label{
-    color: #918f8f;
-}
-.logInnavMain p{
-    font-size: 2.5rem;
-}
-#registerForm{
-    display: none;
-}
-@media(max-width: 900px){
-    .logInnavMain p{
-        font-size: 2rem;
-    }
-    .logInBody{
-        width: 98%;
-      }
-      .logInBodyContainer h2{
-          font-size: 1.5rem;
-      }
-
-}
-@media(max-width: 450px){
-      .logInBodyContainer h2{
-          font-size: 1.2rem;
-      }
-
-}
-

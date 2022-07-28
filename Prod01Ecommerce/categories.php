@@ -2,6 +2,8 @@
 session_start();
 require_once('connection.php');
 require_once('header.php');
+
+//SQL statement to display all of the products that are in the selected category.
 if(isset($_GET['catBTN'])){
     $name = $_GET['catBTN'];
     $sql = mysqli_query($conn,"SELECT product_img,product_name,product_price,product_id FROM product WHERE category_name = '$name'") or die(mysqli_error($conn));
@@ -9,6 +11,7 @@ if(isset($_GET['catBTN'])){
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +20,9 @@ if(isset($_GET['catBTN'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title><?php echo $name ?></title>
 </head>
+
 <body>
-<section class="merchBody">
+    <section class="merchBody">
         <h1><?php echo $name ?></h1>
         <div class="merchBox">
             <?php
@@ -40,4 +44,5 @@ if(isset($_GET['catBTN'])){
     </section>
     <script src="index.js"></script>
 </body>
+
 </html>

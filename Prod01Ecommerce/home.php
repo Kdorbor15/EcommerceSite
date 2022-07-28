@@ -15,6 +15,8 @@
     session_start();
     require_once('connection.php');
     require_once('header.php');
+    
+    //SQL statement to display all of the products
     $sql = "SELECT product_img,product_name,product_price,product_id FROM product";
     $result = mysqli_query($conn,$sql);
     ?>

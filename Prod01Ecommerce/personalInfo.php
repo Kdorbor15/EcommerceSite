@@ -4,26 +4,48 @@ include_once('connection.php');
 include_once('header.php');
 include_once('bottomnav.php');
 $user = $_SESSION['user'];
-$fetchInfo = mysqli_fetch_array(mysqli_query($conn,"SELECT first_name,last_name,pwd,zip,email from client where username = '$user'"));
+
+// sql statement the fetch certain user information
+$fetchInfo = mysqli_fetch_array(mysqli_query($conn,"SELECT first_name,last_name,pwd,zip,email 
+                                                   FROM client 
+                                                   WHERE username = '$user'"));
+
+// sql statement to fetch the address of the user.
 $fetchAddress = mysqli_query($conn,"SELECT address_id,address_line,city,zip,address_name,first_name,last_name,state,apt
-                 FROM address WHERE client_id = (SELECT client_id FROM client WHERE username = '$user')") or die(mysqli_error($conn));
+                                   FROM address 
+                                   WHERE client_id = (
+                                   SELECT client_id 
+                                   FROM client 
+                                   WHERE username = '$user')") or die(mysqli_error($conn));
+
+ // updates the user information                                  
 if(isset($_POST['updateInfo'])){
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
-    $editInfo = mysqli_query($conn,"UPDATE client SET first_name = '$firstname',last_name = '$lastname', email = '$email' WHERE username = '$user'") or die(mysqli_error($conn));
+    $editInfo = mysqli_query($conn,"UPDATE client 
+                                    SET first_name = '$firstname',last_name = '$lastname', email = '$email' 
+                                    WHERE username = '$user'") or die(mysqli_error($conn));
     echo "<meta http-equiv='refresh' content='0'>";
     
 }
+
+// changes the password
 if(isset($_POST['changepwd'])){
     $currpass = $_POST['currPassword'];
     $newPass = $_POST['newPassword'];
     $confirmPass = $_POST['confirmPassword'];
 
-    $actualPassword = mysqli_fetch_row(mysqli_query($conn,"SELECT pwd from client WHERE username = '$user'"));
+    $actualPassword = mysqli_fetch_row(mysqli_query($conn,"SELECT pwd 
+                                                           FROM client 
+                                                           WHERE username = '$user'"));
+
+    // checks if the user inputted the correct current password, and checks if the new password and the confirmed password is the same.
     if($currpass == $actualPassword[0]){
         if($newPass == $confirmPass){
-            $changepass = mysqli_query($conn,"UPDATE client SET pwd = '$newPass' WHERE username = '$user'");
+            $changepass = mysqli_query($conn,"UPDATE client 
+                                              SET pwd = '$newPass' 
+                                              WHERE username = '$user'");
             echo' <script>alert("password successfully changed");</script>';
         }else{
             echo '<script>alert("new password and confirm password does not match")</script>';
@@ -32,6 +54,8 @@ if(isset($_POST['changepwd'])){
         echo '<script>alert("current password do not match")</script>';
     }
 }
+
+// adds a new user address
 if(isset($_POST['addAddressBTN'])){
     $address_name = $_POST['addressName'];
     $firstname = $_POST['addressFname'];
@@ -43,19 +67,31 @@ if(isset($_POST['addAddressBTN'])){
     $zip = $_POST['zip'];
     
     $addAddressSQL = mysqli_query($conn,"INSERT INTO address (client_id,address_line,city,zip,address_name,first_name,last_name,state,apt) 
-                     VALUES ((SELECT client_id FROM client WHERE username = '$user'),'$address_line','$city','$zip','$address_name','$firstname','$lastname','$state','$apt')") or die(mysqli_error($conn));
+                     VALUES((
+                     SELECT client_id 
+                     FROM client 
+                     WHERE username = '$user'),'$address_line','$city','$zip','$address_name','$firstname','$lastname','$state','$apt')") or die(mysqli_error($conn));
     echo "<meta http-equiv='refresh' content='0'>";
 }
 
+
+// edits a selected address
 if(isset($_POST['editAddressBTN'])){
    $address_id = $_POST['editAddressBTN'];
 
    $t1 = "SELECT address_id,address_name,first_name,last_name,address_line,apt,city,state,zip
-   FROM address WHERE address_id = '$address_id' AND client_id = 
-   (SELECT client_id FROM client WHERE username ='$user')";
+          FROM address 
+          WHERE address_id = '$address_id' 
+          AND client_id = (
+          SELECT client_id 
+          FROM client 
+          WHERE username ='$user')";
+
    $t2 = mysqli_fetch_array(mysqli_query($conn,$t1));
 
 }
+
+//saves the updated address
 if(isset($_POST['saveAddressBTN'])){
     $address_id = $_POST['saveAddressBTN'];
     $address_name = $_POST['editAddressName'];
@@ -67,16 +103,30 @@ if(isset($_POST['saveAddressBTN'])){
     $state = $_POST['editstate'];
     $zip = $_POST['editzip'];
 
-    $editAddressSQL = mysqli_query($conn,"UPDATE client_address SET 
-     address_name = '$address_name',first_name = '$first_name',last_name = '$last_name',address_line = '$address_line',
-     apt = '$apt',city='$city',state='$state',zip='$zip' WHERE address_id = '$address_id'");
+    $editAddressSQL = mysqli_query($conn,"UPDATE client_address 
+                                         SET address_name = '$address_name',first_name = '$first_name',last_name = '$last_name',address_line = '$address_line',
+                                         apt = '$apt',city='$city',state='$state',zip='$zip' 
+                                        WHERE address_id = '$address_id'");
 }
+
+// removes address
 if(isset($_POST['removeAddressBTN'])){
     $address_id = $_POST['removeAddressBTN'];
-    $removeSQL = mysqli_query($conn,"DELETE FROM address WHERE address_id ='$address_id'") or die(mysqli_error($conn));
+    $removeSQL = mysqli_query($conn,"DELETE FROM address 
+                                     WHERE address_id ='$address_id'") or die(mysqli_error($conn));
     echo "<meta http-equiv='refresh' content='0'>";
 }
-$fetchPaymentSQL = mysqli_query($conn,"SELECT payment_id,first_name,last_name,card_number,exp_month,exp_year FROM payment WHERE client_id = (SELECT client_id FROM client WHERE username ='$user')") or die(mysqli_error($conn));
+
+// sql statement to fetch all of the saved users payment methods
+$fetchPaymentSQL = mysqli_query($conn,"SELECT payment_id,first_name,last_name,card_number,exp_month,exp_year 
+                                       FROM payment 
+                                       WHERE client_id = (
+                                       SELECT client_id 
+                                       FROM client 
+                                       WHERE username ='$user')") or die(mysqli_error($conn));
+
+
+// cards new payment methods
 if(isset($_POST['addCardBTN'])){
   $first_name = $_POST['cardFName'];
   $last_name = $_POST['cardLName'];
@@ -84,13 +134,20 @@ if(isset($_POST['addCardBTN'])){
   $expMonth = $_POST['expMonth'];
   $expYear = $_POST['expYear'];
   $cvc = $_POST['cvc'];
-  $addCardSQL = mysqli_query($conn,"INSERT INTO payment (client_id,card_number,exp_month,exp_year,cvc,first_name,last_name) VALUES ((SELECT client_id FROM client WHERE username = '$user')
-                ,'$card_number','$expMonth','$expYear','$cvc','$first_name','$last_name')") or die(mysqli_error($conn));
+  $addCardSQL = mysqli_query($conn,"INSERT INTO payment (client_id,card_number,exp_month,exp_year,cvc,first_name,last_name) 
+                                    VALUES ((
+                                    SELECT client_id 
+                                    FROM client 
+                                    WHERE username = '$user')
+                                   ,'$card_number','$expMonth','$expYear','$cvc','$first_name','$last_name')") or die(mysqli_error($conn));
                 echo "<meta http-equiv='refresh' content='0'>";
 }
+
+// remove payment method
 if(isset($_POST['removeCardBTN'])){
     $payment_id = $_POST['removeCardBTN'];
-    $removeCardSQL = mysqli_query($conn,"DELETE FROM payment WHERE payment_id = '$payment_id'") or die(mysqli_error($conn));
+    $removeCardSQL = mysqli_query($conn,"DELETE FROM payment 
+                                         WHERE payment_id = '$payment_id'") or die(mysqli_error($conn));
     echo "<meta http-equiv='refresh' content='0'>";
   }
 ?>
@@ -106,8 +163,9 @@ if(isset($_POST['removeCardBTN'])){
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Personal Info</title>
 </head>
+
 <body>
-    
+
     <section class="personalInfoBody">
         <h3>Personal Info</h3>
         <div class="userRow">
@@ -131,30 +189,32 @@ if(isset($_POST['removeCardBTN'])){
                         <span><?php echo $fetchInfo['zip'] ?></span>
                     </div>
                     <div class="editUserInfo">
-                        <button class="editUserInfoBTN"  type="button" id="showEditField">edit</button>
+                        <button class="editUserInfoBTN" type="button" id="showEditField">edit</button>
                     </div>
                     <div class="editUserInfo">
                         <button class="editUserInfoBTN" type="button" id="showPasswordField">Change Password</button>
                     </div>
                 </div>
-            </div >
+            </div>
             <div id="editInfo">
-                <form id="editInfoInner" action="personalInfo.php" method = "post">
+                <form id="editInfoInner" action="personalInfo.php" method="post">
                     <div class="editPersonalInfo">
                         <div class="nameFields">
                             <div class="nameContainer">
                                 <label for="fname">First Name</label>
-                                <input type="text" name="firstname" id="fname" value = <?php echo $fetchInfo['first_name'] ?>>
+                                <input type="text" name="firstname" id="fname"
+                                    value=<?php echo $fetchInfo['first_name'] ?>>
                             </div>
                             <div class="nameContainer">
                                 <label for="lname">Last Name</label>
-                                <input type="text" name="lastname" id="lname" value = <?php echo $fetchInfo['last_name'] ?>>
+                                <input type="text" name="lastname" id="lname"
+                                    value=<?php echo $fetchInfo['last_name'] ?>>
                             </div>
                         </div>
                         <div class="emailField">
                             <div class="emailContainer">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" id="email" value = <?php echo $fetchInfo['email'] ?>>
+                                <input type="email" name="email" id="email" value=<?php echo $fetchInfo['email'] ?>>
                             </div>
                         </div>
                         <div class="infoFunctionField">
@@ -205,10 +265,10 @@ if(isset($_POST['removeCardBTN'])){
             <h3>Addresses</h3>
             <button id="defaultToAddAddress" type="button">Add Address</button>
         </div>
-           <div class="addressRow">
-                 <div id="defaultAddressDiv">
-                    <div class="addressBoxMain">
-                     <?php
+        <div class="addressRow">
+            <div id="defaultAddressDiv">
+                <div class="addressBoxMain">
+                    <?php
                             if(mysqli_num_rows($fetchAddress) ==  0){
                                 echo"<h1 class='noRez'>No Addresses Added</h1>";
                             }else{
@@ -226,130 +286,135 @@ if(isset($_POST['removeCardBTN'])){
                             }
                         }
                         ?>
-                    </div>
                 </div>
-                <div id="addAddressDiv">
-                    <form id="addAddress" action="personalInfo.php" method="post">
-                        <div class="addAddressContainer">
-                            <div class="addressNameField">
-                                <div class="addressNameContainer">
-                                    <label for="addressName">Address Name*</label>
-                                    <input type="text" name="addressName" id="addressName">
-                                </div>
+            </div>
+            <div id="addAddressDiv">
+                <form id="addAddress" action="personalInfo.php" method="post">
+                    <div class="addAddressContainer">
+                        <div class="addressNameField">
+                            <div class="addressNameContainer">
+                                <label for="addressName">Address Name*</label>
+                                <input type="text" name="addressName" id="addressName">
                             </div>
-                            <div class="addressUserNameFields">
-                                <div class="addressUserNameContainer">
-                                    <label for="addressfname">First Name</label>
-                                    <input type="text" name="addressFname" id="addressfname">
-                                </div>
-                                <div class="addressUserNameContainer">
-                                    <label for="addlname">Last Name</label>
-                                    <input type="text" name="addressLname" id="addlname">
-                                </div>
+                        </div>
+                        <div class="addressUserNameFields">
+                            <div class="addressUserNameContainer">
+                                <label for="addressfname">First Name</label>
+                                <input type="text" name="addressFname" id="addressfname">
                             </div>
-                            <div class="addressInputField">
-                                <div class="adddressInputContainer">
-                                    <label for="addressInput">Address</label>
-                                    <input type="text" name="addressInput" id="addressInput">
-                                </div>
+                            <div class="addressUserNameContainer">
+                                <label for="addlname">Last Name</label>
+                                <input type="text" name="addressLname" id="addlname">
                             </div>
-                            <div class="cityAPTField">
-                                <div class="cityContainer">
-                                    <label for="apt">Apt/Suite</label>
-                                    <input type="text" name="apt" id="apt">
-                                </div>
-                                <div class="cityContainer">
-                                    <label for="city">City</label>
-                                    <input type="text" name="city" id="city">
-                                </div>
+                        </div>
+                        <div class="addressInputField">
+                            <div class="adddressInputContainer">
+                                <label for="addressInput">Address</label>
+                                <input type="text" name="addressInput" id="addressInput">
                             </div>
-                            <div class="stateZipField">
-                                <div class="stateContainer">
-                                    <label for="state">State</label>
-                                    <input type="text" name="state" id="state">
-                                </div>
+                        </div>
+                        <div class="cityAPTField">
+                            <div class="cityContainer">
+                                <label for="apt">Apt/Suite</label>
+                                <input type="text" name="apt" id="apt">
+                            </div>
+                            <div class="cityContainer">
+                                <label for="city">City</label>
+                                <input type="text" name="city" id="city">
+                            </div>
+                        </div>
+                        <div class="stateZipField">
+                            <div class="stateContainer">
+                                <label for="state">State</label>
+                                <input type="text" name="state" id="state">
+                            </div>
+                        </div>
+                        <div class="stateContainer">
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" name="zip" id="zip">
+                        </div>
+                    </div>
+                    <div class="infoFunctionField">
+                        <div class="containers">
+                            <button type="submit" name="addAddressBTN">Save Address</button>
+                        </div>
+                        <div class="containers">
+                            <button type="button" id="addAddressToDefault">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="editAddressDiv">
+                <form id="editAddress" action="personalInfo.php" method="post">
+                    <div class="addAddressContainer">
+                        <div class="addressNameField">
+                            <div class="addressNameContainer">
+                                <label for="addressName">Address Name*</label>
+                                <input type="text" name="addressName" id="editAddressName"
+                                    value=<?php  echo($t2["address_name"])?>>
+                            </div>
+                        </div>
+                        <div class="addressUserNameFields">
+                            <div class="addressUserNameContainer">
+                                <label for="addressfname">First Name</label>
+                                <input type="text" name="addressfname" id="editAddressfname"
+                                    value=<?php echo($t2['first_name'])?>>
+                            </div>
+                            <div class="addressUserNameContainer">
+                                <label for="lname">Last Name</label>
+                                <input type="text" name="addressLname" id="editAddressLname"
+                                    value=<?php echo $t2['last_name']?>>
+                            </div>
+                        </div>
+                        <div class="addressInputField">
+                            <div class="adddressInputContainer">
+                                <label for="addressInput">Address</label>
+                                <input type="text" name="addressInput" id="editAddressInput"
+                                    value="<?php echo$t2['address_line']?>">
+                            </div>
+                        </div>
+                        <div class="cityAPTField">
+                            <div class="cityContainer">
+                                <label for="apt">Apt/Suite</label>
+                                <input type="text" name="apt" id="editapt" value=<?php echo $t2['apt']?>>
+                            </div>
+                            <div class="cityContainer">
+                                <label for="city">City</label>
+                                <input type="text" name="city" id="editcity" value=<?php echo $t2['city']?>>
+                            </div>
+                        </div>
+                        <div class="stateZipField">
+                            <div class="stateContainer">
+                                <label for="state">State</label>
+                                <input type="text" name="state" id="editstate" value=<?php echo $t2["state"]?>>
                             </div>
                             <div class="stateContainer">
                                 <label for="zip">ZIP Code</label>
-                                <input type="text" name="zip" id="zip" >
+                                <input type="text" name="zip" id="editzip" value=<?php echo $t2['zip']?>>
                             </div>
                         </div>
                         <div class="infoFunctionField">
                             <div class="containers">
-                                <button type="submit" name="addAddressBTN">Save Address</button>
+                                <button type="submit" name="saveAddressBTN" value=<?php echo $t2['address_id']?>>Save
+                                    Address</button>
                             </div>
                             <div class="containers">
-                                <button type="button" id="addAddressToDefault">Cancel</button>
+                                <button type="button" id="editAddressToDefault">Cancel</button>
                             </div>
                         </div>
-                    </form>
-                </div>
-                <div id="editAddressDiv">
-                    <form id="editAddress" action="personalInfo.php" method="post">
-                        <div class="addAddressContainer">
-                            <div class="addressNameField">
-                                <div class="addressNameContainer">
-                                    <label for="addressName">Address Name*</label>
-                                    <input type="text" name="addressName" id="editAddressName" value= <?php  echo($t2["address_name"])?>>
-                                </div>
-                            </div>
-                            <div class="addressUserNameFields">
-                                <div class="addressUserNameContainer">
-                                    <label for="addressfname">First Name</label>
-                                    <input type="text" name="addressfname" id="editAddressfname" value = <?php echo($t2['first_name'])?>>
-                                </div>
-                                <div class="addressUserNameContainer">
-                                <label for="lname">Last Name</label>
-                                <input type="text" name="addressLname" id="editAddressLname" value = <?php echo $t2['last_name']?>>
-                                </div>
-                            </div>
-                            <div class="addressInputField">
-                                <div class="adddressInputContainer">
-                                    <label for="addressInput">Address</label>
-                                    <input type="text" name="addressInput" id="editAddressInput" value ="<?php echo$t2['address_line']?>">
-                                </div>
-                            </div>
-                            <div class="cityAPTField">
-                                <div class="cityContainer">
-                                    <label for="apt">Apt/Suite</label>
-                                    <input type="text" name="apt" id="editapt" value= <?php echo $t2['apt']?>>
-                                </div>
-                                <div class="cityContainer">
-                                    <label for="city">City</label>
-                                    <input type="text" name="city" id="editcity" value= <?php echo $t2['city']?>>
-                                </div> 
-                            </div>
-                            <div class="stateZipField">
-                                <div class="stateContainer">
-                                    <label for="state">State</label>
-                                    <input type="text" name="state" id="editstate" value= <?php echo $t2["state"]?>>
-                                </div>
-                                <div class="stateContainer">
-                                    <label for="zip">ZIP Code</label>
-                                    <input type="text" name="zip" id="editzip" value= <?php echo $t2['zip']?>>
-                                </div>
-                            </div>
-                            <div class="infoFunctionField">
-                                <div class="containers">
-                                    <button type="submit" name="saveAddressBTN" value= <?php echo $t2['address_id']?>>Save Address</button>
-                                </div>
-                                <div class="containers">
-                                    <button type="button" id="editAddressToDefault">Cancel</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
+        </div>
         <div class="addressHeader">
             <h3>Payment Methods</h3>
             <button type="button" name="" id="defaultToPayment">Add Card</button>
         </div>
         <div class="paymentRow">
-              <div id="defaultPayment">
-                    <div class="paymentBoxMain">
-                        <div class="inner">
-                            <?php
+            <div id="defaultPayment">
+                <div class="paymentBoxMain">
+                    <div class="inner">
+                        <?php
                             if(mysqli_num_rows($fetchPaymentSQL) ==  0){
                                 echo"<h1 class='noRez'>No Payment Methods Added</h1>";
                             }else{
@@ -366,53 +431,53 @@ if(isset($_POST['removeCardBTN'])){
                             }
                             }
                             ?>
-                        </div>
                     </div>
                 </div>
-                <div id="addPayment">
-                 <form action="personalInfo.php" id="addCard" method="post" >
-                        <div class="addCardContainer">
-                            <div class="cardUserNameField">
-                                <div class="cardUserNameContainer">
-                                    <label for="cardFName">First Name</label>
-                                    <input type="text" name="cardFName" id="cardFName">
-                                </div>
-                                <div class="cardUserNameContainer">
-                                    <label for="cardLname">Last Name</label>
-                                    <input type="text" name="cardLName" id="cardLName">
-                                </div>
+            </div>
+            <div id="addPayment">
+                <form action="personalInfo.php" id="addCard" method="post">
+                    <div class="addCardContainer">
+                        <div class="cardUserNameField">
+                            <div class="cardUserNameContainer">
+                                <label for="cardFName">First Name</label>
+                                <input type="text" name="cardFName" id="cardFName">
                             </div>
-                            <div class="cardNumberField">
-                                <div class="cardNumberContainer">
-                                    <label for="cardNumber">Card Number</label>
-                                    <input type="text" name="cardNumber" id="cardNumber">
-                                </div>
-                            </div>
-                            <div class="cardInfoField">
-                                <div class="cardInfoContainer">
-                                    <label for="cvc">cvc</label>
-                                    <input type="text" name="cvc" id="cvc">
-                                </div>
-                                <div class="cardInfoContainer">
-                                    <label for="expirationMonth">Expiration Month</label>
-                                    <input type="text" name="expMonth" id="expirationMonth">
-                                </div>
-                                <div class="cardInfoContainer">
-                                    <label for="expirationYear">Expiration Year</label>
-                                    <input type="text" name="expYear" id="expirationYear">
-                                </div>
-                            </div>
-                            <div class="infoFunctionField">
-                                <div class="containers">
-                                    <button type="submit" name="addCardBTN">Add Card</button>
-                                </div>
-                                <div class="containers">
-                                    <button id="paymentToDefault">Cancel</button>
-                                </div>
+                            <div class="cardUserNameContainer">
+                                <label for="cardLname">Last Name</label>
+                                <input type="text" name="cardLName" id="cardLName">
                             </div>
                         </div>
-                    </form>
-                </div>
+                        <div class="cardNumberField">
+                            <div class="cardNumberContainer">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" name="cardNumber" id="cardNumber">
+                            </div>
+                        </div>
+                        <div class="cardInfoField">
+                            <div class="cardInfoContainer">
+                                <label for="cvc">cvc</label>
+                                <input type="text" name="cvc" id="cvc">
+                            </div>
+                            <div class="cardInfoContainer">
+                                <label for="expirationMonth">Expiration Month</label>
+                                <input type="text" name="expMonth" id="expirationMonth">
+                            </div>
+                            <div class="cardInfoContainer">
+                                <label for="expirationYear">Expiration Year</label>
+                                <input type="text" name="expYear" id="expirationYear">
+                            </div>
+                        </div>
+                        <div class="infoFunctionField">
+                            <div class="containers">
+                                <button type="submit" name="addCardBTN">Add Card</button>
+                            </div>
+                            <div class="containers">
+                                <button id="paymentToDefault">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </section>
     <script src="index.js"></script>

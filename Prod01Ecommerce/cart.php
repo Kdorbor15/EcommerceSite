@@ -3,31 +3,48 @@ session_start();
 require_once('connection.php');
 require_once('header.php');
 require_once('bottomnav.php');
-$user = $_SESSION['user'];
+$user = $_SESSION['user']; // php variable for user
 
+// updates the quantity for the shoes
 if(isset($_GET['update'])){
-    $item_id = $_GET['update'];
-    $qty = $_GET['quantity'];
+    $item_id = $_GET['update'];  // php variable the stores the id for the shoe that is being updated
+    $qty = $_GET['quantity'];   // current quantity of the shoe
+
+    // sql statement updates the quantity
     $test = "UPDATE cart_item SET quantity = '$qty' WHERE cart_id = 
     (SELECT cart_id from cart WHERE client_id = 
     (SELECT client_id FROM client where username = '$user')) AND cart_item_id = '$item_id'";
     $testResult = mysqli_query($conn,$test) or die(mysqli_error($conn));
 }
+
+// removes the shoes from the cart
 if(isset($_GET['remove'])){
-    $item_id = $_GET['remove'];
+    $item_id = $_GET['remove'];  // php variable the stores the id for the shoe that is to be removed
+
+    // sql statement that removes the shoes from the cart
     $remove = "DELETE FROM cart_item WHERE cart_id = 
     (SELECT cart_id FROM cart WHERE client_id = 
     (SELECT client_id FROM client WHERE username = '$user')) AND cart_item_id = '$item_id'";
     $removeResult = mysqli_query($conn,$remove) or die(mysqli_error($conn));
 }
 
-$sql = "SELECT product_img,product_name,product_price,size,quantity,product.product_id,cart_item.cart_item_id from product INNER JOIN cart_item ON product.product_id = cart_item.product_id WHERE
-       cart_item.cart_id = (SELECT cart_id FROM cart where client_id = (SELECT client_id FROM client WHERE username = '$user'))";
+// sql statement that displays information on all of the products that are in the cart
+$sql = "SELECT product_img,product_name,product_price,size,quantity,product.product_id,cart_item.cart_item_id 
+       FROM product INNER JOIN cart_item 
+       ON product.product_id = cart_item.product_id 
+       WHERE cart_item.cart_id = 
+       (SELECT cart_id FROM cart WHERE 
+       client_id = (SELECT client_id FROM client WHERE username = '$user'))";
+
+//sql statement thats fetches the sum of how many items are in the cart.
 $count = mysqli_fetch_row(mysqli_query($conn,"SELECT SUM(quantity) from cart_item WHERE cart_id = 
 (SELECT cart_id from cart WHERE client_id = 
 (SELECT client_id from client WHERE username = '$user'))"));
+
 $result = mysqli_query($conn,$sql);
 $subtotal = 0;
+
+// if there are no items in the count the estimated shipping gets the value of 0, or the default value of 6;
 if($count[0] == NULL){
       $estimatedShipping = 0;
 }else{

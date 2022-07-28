@@ -4,6 +4,8 @@ include_once('connection.php');
 include_once('header.php');
 include_once('bottomnav.php');
 $user = $_SESSION['user'];
+
+// sql statement that fetches all of the completed transactions that the user has made.
 $fetchOrders = mysqli_query($conn,"SELECT order_id,total,quantity,status,order_date,address_line,first_name,last_name,city,zip,apt,state FROM orders INNER JOIN address ON orders.address_id = address.address_id WHERE address.client_id = (SELECT client_id FROM client WHERE username='$user')");
 ?>
 <!DOCTYPE html>

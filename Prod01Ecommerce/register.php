@@ -1,5 +1,4 @@
-
-    <?php
+<?php
         require_once('connection.php');
        $first_name = $_POST['FName'];
        $last_name = $_POST['LName'];
@@ -10,6 +9,8 @@
        $zip = $_POST['zip'];
       $sql = "SELECT client_id FROM client where username = '$username'";
       $result = mysqli_query($conn,$sql);
+
+      // checks if the username is already inside the database, if it is the user would have to pick a new username
      if(mysqli_num_rows($result) > 0){
         echo "<script>alert('This Username Already Exist please choose a different one');
         window.location='index.php';</script>";

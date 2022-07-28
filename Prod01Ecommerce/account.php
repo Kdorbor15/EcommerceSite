@@ -4,9 +4,22 @@ include_once('connection.php');
 include_once('header.php');
 include_once('bottomnav.php');
 $user = $_SESSION['user'];
+
+// SQL Query to fetch information on the user's addresses
 $fetchAddress = mysqli_query($conn,"SELECT address_id,address_line,city,zip,address_name,first_name,last_name,state,apt
-                 FROM address WHERE client_id = (SELECT client_id FROM client WHERE username = '$user')") or die(mysqli_error($conn));
-$fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity FROM orders WHERE client_id = (SELECT client_id FROM client WHERE username='$user')") or die(mysqli_error($conn));
+                 FROM address 
+                 WHERE client_id = 
+                 (SELECT client_id 
+                 FROM client 
+                 WHERE username = '$user')") or die(mysqli_error($conn));
+
+// SQL Query to fetch information on the user's orders
+$fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity 
+            FROM orders 
+            WHERE client_id = 
+            (SELECT client_id 
+            FROM client 
+            WHERE username='$user')") or die(mysqli_error($conn));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +32,7 @@ $fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity FROM
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Account</title>
 </head>
+
 <body>
     <section id="includeHeader"></section>
     <section id="includeBottomNav"></section>
@@ -38,7 +52,7 @@ $fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity FROM
             </div>";
             }
             ?>
-            <button onclick="document.location='personalInfo.php'"class="infoButton">Manage Personal Info</button>
+            <button onclick="document.location='personalInfo.php'" class="infoButton">Manage Personal Info</button>
         </div>
         <div class="ordersBox">
             <p class="ordersHeading">Recent Orders</p>
@@ -69,6 +83,7 @@ $fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity FROM
             </div>
         </div>
     </section>
-   <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,4 @@
+/* Inserts products into the database */
 INSERT INTO product (product_name,product_img,product_price,category_name) VALUES ("Bred 4s","images/bred4s.jpg",250,"Nike");
 INSERT INTO product (product_name,product_img,product_price,category_name) VALUES ("Electric Green 5s","images/electricgreen.jpg",250,"Nike");
 INSERT INTO product (product_name,product_img,product_price,category_name) VALUES ("Legend Blue 11s","images/legendblue11s.png",250,"Nike");
