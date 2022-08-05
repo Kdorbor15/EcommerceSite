@@ -225,7 +225,7 @@ if(isset($_POST['complete'])){
                                     </div>
                                 </div>
                                 <div class="shippingInfoFunctionsAdds">
-                                    <button type="submit" name="AtoD" id="AtoD" class="functionsBTN" disabled>Save
+                                    <button type="submit" name="AtoD" id="AtoD" class="functionsBTN">Save
                                         Address</button>
                                     <button type="button" class="functionsBTN" id="cancelAddy">Cancel</button>
                                 </div>

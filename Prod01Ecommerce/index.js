@@ -100,34 +100,33 @@ $(document).ready(function(){
 
   // NOT COMP completed
   // jquery function to validarte user input.
-  // $(document).ready(function(){
-  //   $("#DtoA").click(function(){
-  //     $("#addShippingInfo").show();
-  //     $('.addShippingInfo input').keyup(function() {
+  $(document).ready(function(){
+    $("#DtoA").click(function(){
+      $("#defaultShippingInfo").hide();
+      $("#addShippingInfo").show();
+      // $('.addShippingInfo input').keyup(function() {
       
-  //       var empty = false;
-  //       $('.requiredInput').prop('required',true);
-  //       $('.requiredInput').each(function() {
-  //           if ($(this).val().length == 0) {
-  //               empty = true;
-  //           }
-  //       });                   
+        // var empty = false;
+        // $('.requiredInput').prop('required',true);
+        // $('.requiredInput').each(function() {
+        //     if ($(this).val().length == 0) {
+        //         empty = true;
+        //     }
+        // });                   
     
-  //       if (empty) {
-  //           $('#AtoD').attr('disabled', 'disabled');
-  //       } else {
-  //           $('#AtoD').removeAttr('disabled');
-  //       }
-  //     });
-
-  //     $("#defaultShippingInfo").hide();
-  //   });
-  //   $("#cancelAddy").click(function(){
-  //     $("#addShippingInfo").hide();
-  //     $("#defaultShippingInfo").show();
-  //  });
+      //   if (empty) {
+      //       $('#AtoD').attr('disabled', 'disabled');
+      //   } else {
+      //       $('#AtoD').removeAttr('disabled');
+      //   }
+      // });
+    });
+    $("#cancelAddy").click(function(){
+      $("#addShippingInfo").hide();
+      $("#defaultShippingInfo").show();
+   });
   //  $('.requiredAttribute').removeAttr('required');
-  // });
+  });
 
 
 
