@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once('connection.php');
+require_once('connection.php');
 include_once('header.php');
 include_once('bottomnav.php');
 $user = $_SESSION['user'];
@@ -41,7 +41,11 @@ $fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity
             <p class="infoHeading">Personal Info</p>
             <?php
             if(mysqli_num_rows($fetchAddress) < 1){
-                echo "<h1 class='noRez'>No Addresses Added</h1>";
+                echo "
+                <div class='noAddyDiv'>
+                <h1 class='noRez'>No Addresses Added</h1>
+                </div>
+                ";
             }
             while($row = mysqli_fetch_array($fetchAddress)){
            echo"<div class='addressBox'>";
@@ -60,7 +64,12 @@ $fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity
                 <table class="ordersTableInner">
                     <?php
                     if(mysqli_num_rows($fetchOrder) < 1){
-                        echo"<h1 class='noRez'>No Recent Orders</h1>";
+
+                        echo"
+                        <div class='noAddyDiv'>
+                        <h1 class='noRez'>No Recent Orders</h1>
+                        </div>
+                        ";
                     }else{
                     echo"<tr>
                         <th>Order Number</th>
@@ -83,6 +92,7 @@ $fetchOrder = mysqli_query($conn,"SELECT order_id,total,order_date,quantity
             </div>
         </div>
     </section>
+    <?php require_once('footer.php') ?>
     <script src="index.js"></script>
 </body>
 

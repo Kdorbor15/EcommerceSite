@@ -30,7 +30,9 @@
                      ((SELECT cart_id FROM cart WHERE client_id = 
                      (SELECT client_id FROM client WHERE username ='$user')),$product_id,$qty,$size)";
             $result = mysqli_query($conn,$addToCart);
+
          }
-    header("location: home.php");
+         echo '<script>alert("Item Added to Cart!");
+         window.location="home.php";</script>';
         }
 ?>

@@ -226,8 +226,8 @@ table {
   .topNav .navLogo {
     width: 28%;
   }
-  .topnav .navLogo a {
-    font-size: 1.6rem;
+  .topNav .navLogo a {
+    font-size: 1.5rem;
   }
   #navLinks {
     width: 45%;
@@ -1008,6 +1008,7 @@ table {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  padding: 10px;
 }
 .bottomNavHeader {
   color: white;
@@ -1116,6 +1117,11 @@ table {
 .infoBox .infoHeading {
   font-size: 1.2rem;
   font-weight: 500;
+
+}
+
+.noAddyDiv{
+  margin: 50% auto;
 }
 
 .addressBox {
